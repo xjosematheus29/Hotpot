@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hotpot.ai/components/translateLanguageMenu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../assets/application-e6cab4df9dedc2e5b587ea45180232d24268cbbb1e314f5cd16f7dc179661435.js"></script>
+
+<link rel="stylesheet" media="screen" href="../assets/reset-05c44cf8428909649f0fc1436c3efe551a61163501a75f8f0103b768b3cd2596.css" />
+<link rel="stylesheet" media="screen" href="../assets/scaffold-05c455c4ca3288b5e63d2b66a9b12232733f0defb5538d4ffbebe579967f78dc.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+
+<script src="../assets/translatorClass-1eadb62a32070b3cdba1e43c4ccf8ad7e4310c506fe5b33d3cc69f573f0fda9f.js"></script>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<style>
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// Body
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+html, body {
+	background: rgba(0, 0, 0, 0);
+}
+
+
+body.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootOverlay
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootOverlay {
+	background: transparent;
+	height: 100vh;
+	z-index: 0;
+}
+
+
+#rootOverlay.dark {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootBox {
+	position: fixed;
+	top: 60px;
+	left: 10px;
+	display: flex;
+	justify-content: center;
+   box-sizing: border-box;
+   max-height: 95vh;
+	padding: 30px;
+	background: #FCFCFC;
+	border-radius: 5px;
+	margin-right: 10px;
+	box-shadow: 0 0 10px rgba(8, 8, 8, 0.28);
+	overflow: auto;
+	z-index: 8;
+}
+
+
+#rootBox.centered {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// General
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+h2 {
+	padding: 0;
+   margin: 0 0 8px;
+	font-family: Roboto;
+   font-size: 15px;
+   font-weight: normal;
+}
+
+
+a {
+	color: #6DADE0;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+<div id="rootOverlay" class="overlay"></div>
+<div id="rootBox">
+<style>
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// InstantBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#instantBox {
+	height: 100%;
+}
+
+
+.tagList {
+	display: flex;
+	margin-bottom: 25px;
+}
+
+
+.tagList .option {
+	box-sizing: border-box;
+	padding-bottom: 5px;
+	margin-right: 20px;
+	border-bottom: 3px solid transparent;
+	color: #6DADE0;
+   cursor: pointer;
+}
+
+
+.tagList .option.picked, #tagList .option:hover {
+	border-bottom: 3px solid #6DADE0;
+}
+
+
+.languageList {
+	display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 20px;
+}
+
+
+.overlay {
+	backdrop-filter: blur(5px);
+}
+
+
+</style>
+<div id="instantBox">
+<div class="tagList">
+<div class="option popular picked">Popular</div>
+<div class="option all">All</div>
+</div>
+<div class="pickList languageList"></div>
+</div>
+<script>
+
+
+// ================================================================================
+// Globals
+// ================================================================================
+// View Variables
+let InstantBox = null;
+
+// Data Variables
+let Translator = null;
+let FireEvents = true;
+
+
+// ================================================================================
+// Inter-Frame Functions
+// ================================================================================
+function configure(pickedList) {}
+
+
+function fireLanguageListDidChangeEvent() {
+	if (parent && FireEvents) {
+		let list = getLanguageList();
+		parent.translateLanguageMenuDidLanguageListChange(list);
+	}
+}
+
+
+function getLanguageList() {
+	// Get all picked languages.
+	let elemList = InstantBox.find('.languageList .option.picked');
+
+	// Extract language code from picked elements.
+	let result = elemList.get().map( x => $(x).attr('data-languageCode') );
+
+	// No languages picked? Set default value.
+	if (!result.length) {
+		result = [Translator.getDefaultLanguage()];
+	}
+
+	// Return result.
+	return result;
+}
+
+
+// ================================================================================
+// InstantBox Functions
+// ================================================================================
+function initInstantBox() {
+	// Render language list.
+	renderLanguageList();
+
+	// Handle tag clicks.
+	InstantBox.on('click', '.tagList .option', function() {
+		didTagClick($(this));
+	});
+
+	// Handle clicks on languages. Use dynamic handler for flexibility
+	// in case we decide to render languages dynamically in the future.
+	InstantBox.on('click', '.languageList .option.language', function() {
+		didLanguageClick($(this));
+	});
+}
+
+
+function didTagClick(tagElement) {
+	// Set this element as picked.
+	InstantBox.find('.tagList .option').removeClass('picked');
+	tagElement.addClass('picked');
+
+	// Get tag.
+	let tag = tagElement.text();
+
+	// Get language codes for this tag.
+	let codeList = Translator.getLanguageList(tag);
+
+	// Hide all languages first.
+	InstantBox.find('.languageList .option').hide();
+
+	// Now, show only those with matching tag.
+	for (const languageCode of codeList) {
+		InstantBox.find(`.languageList .option[data-languageCode="${languageCode}"]`).show();
+	}
+}
+
+
+function renderLanguageList() {
+	// Get language list element.
+	let listElement = InstantBox.find('.languageList');
+
+	// Empty language list.
+	listElement.empty();
+
+	// Get language list.
+	let languageList = Translator.getLanguageList();
+
+	// Add language to list.
+	for (const languageCode of languageList) {
+		// Set display name.
+		let languageLabel = Translator.getDisplayName(languageCode);
+
+		// Create element for language.
+		let newLanguageElem = $(document.createElement('div'));
+
+		// Set element.
+		newLanguageElem.addClass('option language');
+		newLanguageElem.attr('data-languageCode', languageCode);
+		newLanguageElem.html(languageLabel);
+
+		// Update <languageList>.
+		listElement.append(newLanguageElem);
+	}
+}
+
+
+function didLanguageClick(languageOption) {
+	// Toggle class.
+	$(languageOption).toggleClass('picked');
+
+	// Fire event.
+	fireLanguageListDidChangeEvent();
+}
+
+
+// ================================================================================
+// Global Functions
+// ================================================================================
+function initGlobals() {
+	InstantBox = $('#instantBox');
+
+	Translator = new TranslatorClass();
+}
+
+
+// ================================================================================
+// Document Ready Event Handler
+// ================================================================================
+function initPage() {
+	// Init global variables.
+	initGlobals();
+
+	// Init page components.
+	initInstantBox();
+
+	// Show popular languages by default.
+	InstantBox.find('.tagList .option.popular').click();
+}
+
+
+$(document).ready(function() {
+	initPage();
+
+	debug('Translate language menu document ready end');
+});
+
+</script>
+</div>
+<script>
+
+
+// ================================================================================
+// OverlayClass
+// ================================================================================
+let OverlayClass = (function() {
+   "use strict";
+
+
+   // ================================================================================
+   // Constants
+   // ================================================================================
+   const DefaultShowDur = 200;
+   const DefaultHideDur = 200;
+   const DefaultXOffset = 10;
+   const DefaultYOffset = 10;
+
+   // ================================================================================
+   // Global Variables
+   // ================================================================================
+
+
+
+   // ================================================================================
+   // Functions
+   // ================================================================================
+	function init() {
+		$('#rootOverlay').on('click', function() {
+			hideOverlay(0);
+		});
+	}
+
+
+	function positionContent(anchorXParam, anchorYParam, anchorWidthParam, anchorHeightParam) {
+		// Set anchor points, ensure they are valid numbers.
+		let anchorX = anchorXParam ? anchorXParam : 0;
+		let anchorY = anchorYParam ? anchorYParam : 0;
+		let anchorWidth = anchorWidthParam ? anchorWidthParam : 0;
+		let anchorHeight = anchorHeightParam ? anchorHeightParam : 0;
+
+		// Default content position to be below anchor point.
+		let newX = anchorX + DefaultXOffset;
+		let newY = anchorY + anchorHeight + DefaultYOffset;
+
+		// Set default max-height value.
+		let maxHeight = 'none';
+
+		// Set content box.
+		let contentBox = $('#rootBox');
+
+      // Set window and content values.
+      let contentHeight = contentBox.outerHeight();
+      let windowWidth = $(window).width();
+      let windowHeight = $(window).height();
+
+		// If insufficient space below, can we place content above anchor point?
+		if (newY + contentHeight > windowHeight) {
+			// Update <newY>.
+ 			newY = anchorY - DefaultYOffset - contentHeight;
+
+ 			// Insufficient space above anchor point? Position content near window top.
+ 			if (newY < DefaultYOffset || (newY + contentHeight > windowHeight)) {
+ 				// Set <newY>.
+ 				newY = DefaultYOffset;
+
+ 				// Update <maxHeight>.
+ 				maxHeight = windowHeight - 2*DefaultYOffset;
+ 			}
+ 		}
+
+ 		// Set content properties.
+ 		contentBox.offset({left: newX, top: newY});
+ 		contentBox.css('max-height', maxHeight + 'px');
+	}
+
+
+	function showOverlayBySettings() {
+		showOverlay();
+
+	 	let maxWidth = $(window).width() - 2*DefaultXOffset;
+	 	let maxHeight = $(window).height() - 2*DefaultYOffset;
+
+		let contentBox = $('#rootBox');
+		contentBox.css('position', 'static');
+		contentBox.css('max-height', maxHeight + 'px');
+		contentBox.css('max-width', maxWidth + 'px');
+
+		//if (contentBox.outerWidth() > $(window).width() ||
+		//	contentBox.outerHeight() > $(window).height()) {
+			contentBox.css('overflow', 'auto');
+		//}
+
+		$('body').addClass('center');
+		$('#rootOverlay').addClass('dark');
+	}
+
+
+	function showOverlay() {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = DefaultShowDur;
+
+		// Show overlay.
+		iframeElement.fadeIn(dur);
+
+		// Given content focus.
+		$('#rootBox').focus();
+	}
+
+
+	function hideOverlay(durParam) {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = isDefined(durParam) ? durParam : DefaultHideDur;
+
+		// Show overlay.
+		iframeElement.fadeOut(dur);
+	}
+
+
+	function configure(settings) {
+		if (settings.background) {
+			$('#rootOverlay').css('background', settings.background);
+		}
+	}
+
+
+   // ================================================================================
+   // API
+   // ================================================================================
+   return {
+      init: init,
+      configure: configure,
+      hideOverlay: hideOverlay,
+      showOverlay: showOverlay,
+      showOverlayBySettings: showOverlayBySettings,
+      positionContent: positionContent
+   };
+})();
+
+
+// ================================================================================
+// Component Layout Ready Event Handler
+// ================================================================================
+$(document).ready(function() {
+	OverlayClass.init();
+});
+
+
+function positionContent(anchorX, anchorY, anchorWidth, anchorHeight) {
+	OverlayClass.positionContent(anchorX, anchorY, anchorWidth, anchorHeight);
+}
+
+
+function hideOverlay(dur) {
+	OverlayClass.hideOverlay(dur);
+}
+
+
+function showOverlay() {
+	OverlayClass.showOverlay();
+}
+
+
+function showOverlayBySettings(settings) {
+	OverlayClass.showOverlayBySettings(settings);
+}
+
+
+function showOverlayBySettingsNEW(settings) {
+	// Show overlay.
+	OverlayClass.showOverlay();
+	OverlayClass.configure(settings);
+
+	// Set content box.
+	let contentBox = $('#rootBox');
+
+	contentBox.toggleClass('centered', settings.centered);
+
+
+
+	// TODO: Fix this hacky stuff. Please. It's so embarrassing.
+	// Reset width value.
+	contentBox.css('width', 'auto');
+
+
+
+	if (settings.centered) {
+		let overflowCSS = contentBox.prop('scrollHeight') > contentBox.height() ? 'auto' : 'visible';
+		contentBox.css('overflow', overflowCSS);
+
+		if (settings.widthPercentage) {
+			contentBox.css('width', settings.widthPercentage + '%');
+		}
+
+	} else {
+		OverlayClass.positionContent(settings.anchorX, settings.anchorY, settings.anchorWidth, settings.anchorHeight);
+	}
+}
+
+
+</script>
+</body>
+
+<!-- Mirrored from hotpot.ai/components/translateLanguageMenu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:58 GMT -->
+</html>

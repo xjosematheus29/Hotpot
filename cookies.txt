@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+hotpot.ai	TRUE	/	FALSE	1999999999	_hotpot_session	I7tH2nuWU91zEl36fUBYyglL5Xzh3uRmYsEe4xAyCU5HOIVvvrutTvm5u%2FHBGY2DivOsb5Rv%2Ff0bLenn68eZzt9Xapy3YqdL6TK0Kt1R9J52TJozGJSdc4a0H1x3iENVNdNNfszfjHXLMFH7IDkQZZT7dpPSBjrTQwW9e5fKvPdztON7YiJE--shrXM44cJztKTlqq--fNhedsNbNgOsFSa0pgoSGQ%3D%3D
+

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hotpot.ai/components/galleryMenu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../assets/application-e6cab4df9dedc2e5b587ea45180232d24268cbbb1e314f5cd16f7dc179661435.js"></script>
+
+<link rel="stylesheet" media="screen" href="../assets/reset-05c44cf8428909649f0fc1436c3efe551a61163501a75f8f0103b768b3cd2596.css" />
+<link rel="stylesheet" media="screen" href="../assets/scaffold-05c455c4ca3288b5e63d2b66a9b12232733f0defb5538d4ffbebe579967f78dc.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+
+<meta name="robots" content="noindex">
+</head>
+<body>
+<style>
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// Body
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+html, body {
+	background: rgba(0, 0, 0, 0);
+}
+
+
+body.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootOverlay
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootOverlay {
+	background: transparent;
+	height: 100vh;
+	z-index: 0;
+}
+
+
+#rootOverlay.dark {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootBox {
+	position: fixed;
+	top: 60px;
+	left: 10px;
+	display: flex;
+	justify-content: center;
+   box-sizing: border-box;
+   max-height: 95vh;
+	padding: 30px;
+	background: #FCFCFC;
+	border-radius: 5px;
+	margin-right: 10px;
+	box-shadow: 0 0 10px rgba(8, 8, 8, 0.28);
+	overflow: auto;
+	z-index: 8;
+}
+
+
+#rootBox.centered {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// General
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+h2 {
+	padding: 0;
+   margin: 0 0 8px;
+	font-family: Roboto;
+   font-size: 15px;
+   font-weight: normal;
+}
+
+
+a {
+	color: #6DADE0;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+<div id="rootOverlay" class="overlay"></div>
+<div id="rootBox">
+<style>
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// General
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+a {
+	color: #6DADE0;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+.overlay {
+	backdrop-filter: blur(5px);
+}
+
+
+#menuBox {
+	flex-grow: 1;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+
+#controlBox {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+ 	margin: 0 50px 50px 0;
+}
+
+
+#galleryBox {
+	flex-grow: 1;
+	display: grid;
+ 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ 	grid-gap: 20px;
+ 	grid-auto-flow: dense;
+}
+
+
+#galleryBox .imageBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100px;
+	height: 100px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+
+#galleryBox .imageBox:hover {
+	border-color: #6DADE0;
+}
+
+
+#galleryBox .imageBox img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// UploadBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#uploadBox {
+	display: flex;
+}
+
+
+input.file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	z-index: -1;
+	position: absolute;
+}
+
+
+#uploadBox .button {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 50%;
+	max-width: 250px;
+	height: 120px;
+	padding: 5px;
+   border: 1px solid #E0E0E0;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(188, 188, 188, .2);
+   cursor: pointer;
+   transition: 0.5s linear;
+}
+
+
+#uploadBox .button:hover {
+   border: 1px solid #6DADE0;
+   box-shadow: none;
+   color: #6DADE0;
+}
+
+
+#uploadBox .button.upload {
+	background-image: url(../images/site/graphicIcon.svg);
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+#uploadBox img {
+	height: 100%;
+	object-fit: contain;
+	border-radius: 5px;
+}
+
+
+#uploadBox .label {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+
+#uploadBox .tip {
+	width: 40%;
+	max-width: 500px;
+	margin-left: 50px;
+}
+
+
+@media screen and (max-width : 1050px) {
+	#controlBox {
+		margin: 0 0 50px
+	}
+
+
+	#uploadBox {
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	#uploadBox .button {
+		width: 100%;
+	}
+
+
+	#uploadBox .tip {
+		width: 100%;
+		margin: 50px 0 0;
+	}
+}
+
+
+</style>
+<div id="menuBox">
+<div id="controlBox">
+<div id="uploadBox">
+<input type="file" class="file" accept=".jpg, .jpeg, .png, .webp" />
+<div class="button upload" title="Upload image">
+<img src="../images/site/transparent.gif" />
+<div class="label"> Upload </div>
+</div>
+<div class="tip">
+For style images, please choose ones with rich artistic elements like textures, colors, and brush strokes. Distinctive styles are easier to emulate.
+</div>
+</div>
+</div>
+<div id="galleryBox"></div>
+</div>
+<script>
+
+
+// ================================================================================
+// Globals
+// ================================================================================
+let ControlBox = null;
+let UploadBox = null;
+let GalleryBox = null;
+
+let FireEvents = true;
+let ParentEventType = null;
+
+
+// ================================================================================
+// Image Constants
+// ================================================================================
+const RootDirPath = '../images/site/ai/art_remixer/index.html';
+const BaseDirPath = RootDirPath + 'bases/';
+const StyleDirPath = RootDirPath + 'styles/';
+
+const BaseImageTip = 'For base images, simple images provide an easier "canvas" on which our AI can apply a new style.';
+const StyleImageTip = 'For style images, choose ones with rich artistic elements like textures, colors, and brush strokes. Distinctive styles are easier to emulate.';
+
+const DefaultBaseImageList = [
+	'baseball1.jpg',
+	'basketball1.html',
+	'dog.html',
+	'eagle1.html',
+	'goldenGate.html',
+	'cat1.html',
+	'cat2.html',
+	'hongKong1.html',
+	'hongKong2.html',
+	'lincoln1.html',
+	'lion1.html',
+	'martinLutherKing1.html',
+	'obama1.html',
+	'statueLiberty.html',
+	'creative1.html',
+	'macbook1.html',
+	'typing1.html',
+	'camera1.html',
+	'pencil1.html'
+];
+
+const DefaultStyleImageList = [
+	'starry.jpg',
+	'graffiti1.html',
+	'wave.html',
+	'monet2.html',
+	'1.html',
+	'2.html',
+	'graffiti2.html',
+	'lastSupper.html',
+	'3.html',
+	'asheville.html',
+	'bicentennial.html',
+	'horse.html',
+	'laGrandeJatte.html',
+	'laMuse.html',
+	'lesregates.html',
+	'monalisa2.html',
+	'monet1.html',
+	'monet3.html',
+	'monet4.html',
+	'mosaic.html',
+	'munch1.html',
+	'chinese1.html',
+	'chinese2.html',
+	'chinese3.html',
+	'persistenceOfMemory.html',
+	'picasso.html',
+	'purplepulpits.html',
+	'reservoir.html',
+	'spiral.html',
+	'tech1.html',
+	'tech2.html',
+	'tech3.html',
+	'pixel1.html',
+	'pixel2.html',
+	'wallpaper1.html',
+	'wallpaper2.html',
+	'wallpaper3.html',
+	'wallpaper4.html',
+	'wallpaper5.html',
+	'wallpaper6.html',
+	'wallpaper7.html',
+	'abstract1.html',
+	'picasso_hotpot1.html',
+];
+
+
+// ================================================================================
+// Inter-Frame Functions
+// ================================================================================
+function configure(imageURLList, parentEventTypeParam) {
+	// Save event type.
+	ParentEventType = parentEventTypeParam;
+
+	// Set tip.
+	let tip = ParentEventType === 1 ? StyleImageTip : BaseImageTip;
+	ControlBox.find('.tip').text(tip);
+
+	// Reset @UploadBox.
+	UploadBox.find('.button').addClass('upload');
+	UploadBox.find('img').attr('src', '../images/site/transparent.gif');
+
+	// Set @GalleryBox.
+	if (ParentEventType === 1) {
+		setGalleryBox(DefaultStyleImageList, StyleDirPath);
+	} else {
+		setGalleryBox(DefaultBaseImageList, BaseDirPath);
+	}
+}
+
+
+function fireDidPickImageEvent(imageData) {
+	if (FireEvents && parent) {
+		parent.galleryMenuDidPickImage(imageData, ParentEventType);
+	}
+}
+
+
+// ================================================================================
+// UploadBox Functions
+// ================================================================================
+function initControlBox() {
+	// Handle file uploads.
+	UploadBox.find('input.file').on('change', function() {
+		didChangeFileElement($(this));
+	});
+
+   // Trigger file uploads on button click and link.
+	UploadBox.find('.button.upload').on('click', function() {
+		UploadBox.find('input.file').trigger('click');
+	});
+}
+
+
+function didChangeFileElement(fileElement) {
+   let imageFile = fileElement[0].files[0];
+
+	// Process file.
+	didStartImageUpload(imageFile);
+}
+
+
+function didStartImageUpload(file) {
+	// Create reader.
+	let reader = new FileReader();
+
+	// Extract file stem, which is the filename minus the extension.
+	let filename = file.name;
+	let fileStem = filename.replace(/\.[^/.]+$/, '');
+
+	// Process image when picked.
+	reader.onload = function(e) {
+		// Get data URL for image.
+		let dataURL = reader.result;
+
+		// Create new image object.
+		let newImage = new Image();
+
+		// Process image when loaded.
+		newImage.onload = function(imageResult) {
+			didEndImageUpload(dataURL, this.width, this.height);
+		}
+
+		// Start loading image.
+		newImage.src = dataURL;
+
+		// Clear uploaded image filepath, allowing this image to be re-uploaded.
+		clearFilepath();
+	};
+
+	// Read image from hard disk.
+	reader.readAsDataURL(file);
+
+	// Print status.
+	debug('Uploaded image: ' + file.name);
+}
+
+
+function didEndImageUpload(imageDataUrl, naturalWidth, naturalHeight) {
+	// Alert user if image too large?
+	let maxSize = 4000;
+	if (naturalWidth >= maxSize || naturalHeight >= maxSize) {
+		//MessageClass.showMessage('Our AI is not ready for images this large. Please email us to try larger images.');
+	}
+
+	// Update image box.
+	UploadBox.find('.button').removeClass('upload');
+	UploadBox.find('img').attr('src', imageDataUrl);
+
+	// Hide label.
+	UploadBox.find('.label').hide();
+
+	// Fire event.
+	fireDidPickImageEvent(imageDataUrl);
+}
+
+
+function clearFilepath() {
+	FireEvents = false;
+	UploadBox.find('.file').val('');
+	FireEvents = true;
+}
+
+
+// ================================================================================
+// GalleryBox Functions
+// ================================================================================
+function initGalleryBox() {
+	// Handle clicks on image boxes, must use dynamic form since we add image boxes dynamically.
+	$('body').on('click', '#galleryBox .imageBox', function() {
+		didClickImageBox($(this));
+	});
+}
+
+
+function didClickImageBox(imageBox) {
+	// Get image URL.
+	let imageURL = imageBox.find('img').attr('src');
+
+	// Convert to data URL then invoke @didEndImageUpload.
+	graphicURLToDataURL(imageURL, function(dataURL, imageWidth, imageHeight) {
+		didEndImageUpload(dataURL, imageWidth, imageHeight);
+	});
+}
+
+
+function setGalleryBox(imageList, dirPath) {
+	// Empty @GalleryBox.
+	GalleryBox.empty();
+
+	// Create element for each image.
+	for (const filename of imageList) {
+		// Create element.
+		let imageBox = $(document.createElement('div'));
+
+		// Set element class.
+		imageBox.addClass('imageBox');
+
+		// Set image URL.
+		let imageURL = dirPath + filename;
+
+		// Create img element.
+		let imgElement = $(document.createElement('img'));
+		imgElement.attr('src', imageURL);
+
+		// Add components to image box.
+		imageBox.append(imgElement);
+
+		// Update <GalleryBox>.
+		GalleryBox.append(imageBox);
+	}
+}
+
+
+// ================================================================================
+// Global Functions
+// ================================================================================
+function initGlobals() {
+	ControlBox = $('#controlBox');
+	UploadBox = $('#uploadBox');
+	GalleryBox = $('#galleryBox');
+}
+
+
+// ================================================================================
+// Keyboard Event Functions
+// ================================================================================
+function initKeyboardEvents() {}
+
+
+// ================================================================================
+// Document Ready Event Handler
+// ================================================================================
+function initPage() {
+	initGlobals();
+
+	// Init page components.
+	initGalleryBox();
+	initControlBox();
+
+	// Init input events.
+	initKeyboardEvents();
+}
+
+
+$(document).ready(function() {
+	initPage();
+
+	debug('Gallery menu document ready end');
+});
+
+</script>
+</div>
+<script>
+
+
+// ================================================================================
+// OverlayClass
+// ================================================================================
+let OverlayClass = (function() {
+   "use strict";
+
+
+   // ================================================================================
+   // Constants
+   // ================================================================================
+   const DefaultShowDur = 200;
+   const DefaultHideDur = 200;
+   const DefaultXOffset = 10;
+   const DefaultYOffset = 10;
+
+   // ================================================================================
+   // Global Variables
+   // ================================================================================
+
+
+
+   // ================================================================================
+   // Functions
+   // ================================================================================
+	function init() {
+		$('#rootOverlay').on('click', function() {
+			hideOverlay(0);
+		});
+	}
+
+
+	function positionContent(anchorXParam, anchorYParam, anchorWidthParam, anchorHeightParam) {
+		// Set anchor points, ensure they are valid numbers.
+		let anchorX = anchorXParam ? anchorXParam : 0;
+		let anchorY = anchorYParam ? anchorYParam : 0;
+		let anchorWidth = anchorWidthParam ? anchorWidthParam : 0;
+		let anchorHeight = anchorHeightParam ? anchorHeightParam : 0;
+
+		// Default content position to be below anchor point.
+		let newX = anchorX + DefaultXOffset;
+		let newY = anchorY + anchorHeight + DefaultYOffset;
+
+		// Set default max-height value.
+		let maxHeight = 'none';
+
+		// Set content box.
+		let contentBox = $('#rootBox');
+
+      // Set window and content values.
+      let contentHeight = contentBox.outerHeight();
+      let windowWidth = $(window).width();
+      let windowHeight = $(window).height();
+
+		// If insufficient space below, can we place content above anchor point?
+		if (newY + contentHeight > windowHeight) {
+			// Update <newY>.
+ 			newY = anchorY - DefaultYOffset - contentHeight;
+
+ 			// Insufficient space above anchor point? Position content near window top.
+ 			if (newY < DefaultYOffset || (newY + contentHeight > windowHeight)) {
+ 				// Set <newY>.
+ 				newY = DefaultYOffset;
+
+ 				// Update <maxHeight>.
+ 				maxHeight = windowHeight - 2*DefaultYOffset;
+ 			}
+ 		}
+
+ 		// Set content properties.
+ 		contentBox.offset({left: newX, top: newY});
+ 		contentBox.css('max-height', maxHeight + 'px');
+	}
+
+
+	function showOverlayBySettings() {
+		showOverlay();
+
+	 	let maxWidth = $(window).width() - 2*DefaultXOffset;
+	 	let maxHeight = $(window).height() - 2*DefaultYOffset;
+
+		let contentBox = $('#rootBox');
+		contentBox.css('position', 'static');
+		contentBox.css('max-height', maxHeight + 'px');
+		contentBox.css('max-width', maxWidth + 'px');
+
+		//if (contentBox.outerWidth() > $(window).width() ||
+		//	contentBox.outerHeight() > $(window).height()) {
+			contentBox.css('overflow', 'auto');
+		//}
+
+		$('body').addClass('center');
+		$('#rootOverlay').addClass('dark');
+	}
+
+
+	function showOverlay() {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = DefaultShowDur;
+
+		// Show overlay.
+		iframeElement.fadeIn(dur);
+
+		// Given content focus.
+		$('#rootBox').focus();
+	}
+
+
+	function hideOverlay(durParam) {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = isDefined(durParam) ? durParam : DefaultHideDur;
+
+		// Show overlay.
+		iframeElement.fadeOut(dur);
+	}
+
+
+	function configure(settings) {
+		if (settings.background) {
+			$('#rootOverlay').css('background', settings.background);
+		}
+	}
+
+
+   // ================================================================================
+   // API
+   // ================================================================================
+   return {
+      init: init,
+      configure: configure,
+      hideOverlay: hideOverlay,
+      showOverlay: showOverlay,
+      showOverlayBySettings: showOverlayBySettings,
+      positionContent: positionContent
+   };
+})();
+
+
+// ================================================================================
+// Component Layout Ready Event Handler
+// ================================================================================
+$(document).ready(function() {
+	OverlayClass.init();
+});
+
+
+function positionContent(anchorX, anchorY, anchorWidth, anchorHeight) {
+	OverlayClass.positionContent(anchorX, anchorY, anchorWidth, anchorHeight);
+}
+
+
+function hideOverlay(dur) {
+	OverlayClass.hideOverlay(dur);
+}
+
+
+function showOverlay() {
+	OverlayClass.showOverlay();
+}
+
+
+function showOverlayBySettings(settings) {
+	OverlayClass.showOverlayBySettings(settings);
+}
+
+
+function showOverlayBySettingsNEW(settings) {
+	// Show overlay.
+	OverlayClass.showOverlay();
+	OverlayClass.configure(settings);
+
+	// Set content box.
+	let contentBox = $('#rootBox');
+
+	contentBox.toggleClass('centered', settings.centered);
+
+
+
+	// TODO: Fix this hacky stuff. Please. It's so embarrassing.
+	// Reset width value.
+	contentBox.css('width', 'auto');
+
+
+
+	if (settings.centered) {
+		let overflowCSS = contentBox.prop('scrollHeight') > contentBox.height() ? 'auto' : 'visible';
+		contentBox.css('overflow', overflowCSS);
+
+		if (settings.widthPercentage) {
+			contentBox.css('width', settings.widthPercentage + '%');
+		}
+
+	} else {
+		OverlayClass.positionContent(settings.anchorX, settings.anchorY, settings.anchorWidth, settings.anchorHeight);
+	}
+}
+
+
+</script>
+</body>
+
+<!-- Mirrored from hotpot.ai/components/galleryMenu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:49 GMT -->
+</html>

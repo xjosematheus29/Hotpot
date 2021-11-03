@@ -1,0 +1,3157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hotpot.ai/stubbi/twitter-1-1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:59:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta charset="utf-8">
+<title>Twitter API 1.1 Testing Tool | Free | Easy to use - Hotpot.ai</title>
+<meta name="description" content='Hotpot.ai is an easy way to create device mockups, logos, social media ads, and other graphics. Drag-n-drop editors and attractive templates allow anyone to make professional graphics quickly.'>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="preconnect" href="https://ajax.googleapis.com/">
+<link rel="preconnect" href="https://www.gstatic.com/">
+<link rel="preconnect" href="https://www.clarity.ms/">
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://js.driftt.com/">
+<link rel="dns-prefetch" href="https://connect.facebook.net/">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap" as="style">
+<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap">
+<link rel="stylesheet" media="screen" href="../assets/reset-05c44cf8428909649f0fc1436c3efe551a61163501a75f8f0103b768b3cd2596.css" />
+<link rel="stylesheet" media="screen" href="../assets/scaffold-05c455c4ca3288b5e63d2b66a9b12232733f0defb5538d4ffbebe579967f78dc.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../assets/application-e6cab4df9dedc2e5b587ea45180232d24268cbbb1e314f5cd16f7dc179661435.js"></script>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hotpot Design">
+<meta property="og:title" content="Twitter API 1.1 Testing Tool | Free | Easy to use">
+<meta property="og:description" content="Hotpot.ai is an easy way to create device mockups, logos, social media ads, and other graphics. Drag-n-drop editors and attractive templates allow anyone to make professional graphics quickly.">
+<meta property="og:image" content="https://hotpot.ai/images/site/ogDefaultImage.jpg">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="https://hotpot.ai/stubbi/twitter-1-1">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hotpot.ai/images/site/ogDefaultImage.jpg">
+<meta name="twitter:site" content="@HotpotMain">
+<meta name="twitter:title" content="Twitter API 1.1 Testing Tool | Free | Easy to use">
+<meta name="twitter:description" content="Hotpot.ai is an easy way to create device mockups, logos, social media ads, and other graphics. Drag-n-drop editors and attractive templates allow anyone to make professional graphics quickly.">
+
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" type="image/png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hotpot Design">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131810640-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131810640-1');
+  gtag('config', 'AW-770971492');
+</script>
+
+<link rel="canonical" href="twitter-1-1.html">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "legalName": "Panabee, LLC",
+  "name": "Hotpot.ai",
+  "url": "https://hotpot.ai",
+  "sameAs" : [
+    "https://twitter.com/HotpotMain",
+    "https://github.com/HotpotDesign",
+    "https://www.facebook.com/HotpotDesign"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Hotpot.ai",
+    "alternateName": "Hotpot",
+    "logo": "https://hotpot.ai/images/apple-touch-icon.png"
+  },
+  "contactPoint" : [
+    {
+      "@type" : "ContactPoint",
+      "contactType" : "customer service",
+      "email": "help@hotpot.ai",
+      "url": "https://hotpot.ai"
+    }
+  ]
+}
+</script>
+
+
+<script src="../assets/aiClass-48578e72b1959053205bd070aeeb4b42395eccc9207ed0ef73d40f670bee8eb2.js" defer="defer"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js" defer></script>
+<script src="../assets/hotpotFirebaseClass-3ac7afdaef736444b6d63d700cf410ae0e580eab24d35a743c21b489a09db36c.js" defer="defer"></script>
+
+<link rel="stylesheet" media="screen" href="../assets/custom_sidebar_page-64d51b88249b8a09ecffd37f2b5fa0f096beb7901965c9eb30baf2cc4ce361a5.css" />
+
+</head>
+<body>
+<div id="rootHeader">
+<div class="headerBody">
+<a href="../index.html" class="logo">
+<img src="../images/logos/logoWhite.svg" />
+<div class="name">Hotpot</div>
+</a>
+<div class="linkBox">
+<a href="../tools.html" class="desktop">AI Tools</a>
+<a href="../index.html" class="desktop">Graphics</a>
+<a href="../login.html" class="desktop">Account</a>
+<div id="sidebarButton"></div>
+</div>
+</div>
+</div>
+<div id="rootBody">
+<div id="rootSidebar" class="startHidden">
+<div class="overlay">
+<div class="closeBox"></div>
+</div>
+<div class="menuBox">
+<div class="branch standalone">
+<a href="../docs/apif12a.html?s=sidebar" class="leaf" target="_blank">Hotpot API</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">AI Tools</div>
+<div class="icon"></div>
+</div>
+<a href="../ai-copywriterf12a.html?s=sidebar" class="leaf" target="_blank">Copywriter</a>
+<a href="../art-makerf12a.html?s=sidebar" class="leaf" target="_blank">Art Maker</a>
+<a href="../personalize-artf12a.html?s=sidebar" class="leaf" target="_blank">Art Personalizer</a>
+<a href="../restore-picturef12a.html?s=sidebar" class="leaf" target="_blank">Picture Restorer</a>
+<a href="../colorize-picturef12a.html?s=sidebar" class="leaf" target="_blank">Picture Colorizer</a>
+<a href="../remove-backgroundf12a.html?s=sidebar" class="leaf" target="_blank">Background Remover</a>
+<a href="../enlarge-picturef12a.html?s=sidebar" class="leaf" target="_blank">Graphic Enlarger</a>
+<a href="../file-translatorf12a.html?s=sidebar" class="leaf" target="_blank">File Translator</a>
+<a href="../tag-imagef12a.html?s=sidebar" class="leaf" target="_blank">Image Classifier</a>
+<a href="../color-generatorf12a.html?s=sidebar" class="leaf" target="_blank">Color Generator</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Design Tools</div>
+<div class="icon"></div>
+</div>
+<a href="../icon-resizerf12a.html?s=sidebar" class="leaf" target="_blank">Icon Resizer</a>
+<a href="../free-iconsf12a.html?s=sidebar" class="leaf" target="_blank">Icon Creator</a>
+<a href="../svg-to-png-converterf12a.html?s=sidebar" class="leaf" target="_blank">SVG To PNG</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Apple</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/app-clip-header.html" class="leaf">App Clip</a>
+<a href="../app-preview.html" class="leaf">App Preview Video</a>
+<a href="../templates/app-store-icon.html" class="leaf">App Store Icon</a>
+<a href="../templates/app-store-panorama-iphone-12-pro-max.html" class="leaf">Panorama - 12 Pro Max </a>
+<a href="../templates/app-store-panorama-iphone-xs-max.html" class="leaf">Panorama - XS Max </a>
+<a href="../templates/iphone-12-pro-max-screenshot.html" class="leaf">Screenshot - 12 Pro Max</a>
+<a href="../templates/iphone-xs-max-screenshot.html" class="leaf">Screenshot - XS Max</a>
+<a href="../templates/iphone-8-plus-screenshot.html" class="leaf">Screenshot - 8 Plus</a>
+<a href="../templates/ipad-pro-screenshot.html" class="leaf">Screenshot - iPad Pro</a>
+<a href="../templates/macbook-screenshot.html" class="leaf">Screenshot - MacBook</a>
+<a href="../templates/iphone-12-pro-max-mockup.html" class="leaf">Mockup - 12 Pro Max</a>
+<a href="../templates/iphone-xs-max-mockup.html" class="leaf">Mockup - XS Max</a>
+<a href="../templates/iphone-8-plus-mockup.html" class="leaf">Mockup - 8 Plus</a>
+ <a href="../templates/ipad-pro-mockup.html" class="leaf">Mockup - iPad Pro</a>
+<a href="../templates/macbook-mockup.html" class="leaf">Mockup - MacBook</a>
+<a href="../templates/launch-screen.html" class="leaf">Launch Screen</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Android</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/google-play-feature-graphic.html" class="leaf">Feature Graphic</a>
+<a href="../app-preview.html" class="leaf">Promo Video</a>
+<a href="../templates/google-play-icon.html" class="leaf">Google Play Icon</a>
+<a href="../templates/samsung-s10-screenshot.html" class="leaf">Screenshot - S10</a>
+<a href="../templates/samsung-s9.html" class="leaf">Screenshot - Samsung S9</a>
+<a href="../templates/pixel-3.html" class="leaf">Screenshot - Pixel 3</a>
+<a href="../templates/samsung-s20-ultra-mockup.html" class="leaf">Mockup - Samsung S20</a>
+<a href="../templates/samsung-s10-mockup.html" class="leaf">Mockup - Samsung S10</a>
+<a href="../templates/google-pixel-5-mockup.html" class="leaf">Mockup - Pixel 5</a>
+<a href="../templates/google-pixel-4-xl-mockup.html" class="leaf">Mockup - Pixel 4 XL</a>
+<a href="../templates/splash-screen.html" class="leaf">Splash Screen</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Facebook</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/facebook-cover.html" class="leaf">Facebook Cover</a>
+<a href="../templates/facebook-post.html" class="leaf">Facebook Post</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Instagram</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/instagram-panorama.html" class="leaf">Instagram Panorama</a>
+<a href="../templates/instagram-post.html" class="leaf">Instagram Post</a>
+<a href="../templates/instagram-story.html" class="leaf">Instagram Story</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">LinkedIn</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/linkedin-banner.html" class="leaf">LinkedIn Banner</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Twitter</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/twitter-header.html" class="leaf">Twitter Header</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">YouTube</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/youtube-banner.html" class="leaf">YouTube Banner</a>
+<a href="../templates/youtube-thumbnail.html" class="leaf">YouTube Thumbnail</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Other Social Media</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/reddit-card.html" class="leaf">Reddit Card</a>
+<a href="../templates/reddit-thumbnail.html" class="leaf">Reddit Thumbnail</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">General</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/background.html" class="leaf">Background</a>
+<a href="../templates/button.html" class="leaf">Button</a>
+<a href="../templates/game-asset.html" class="leaf">Game Asset</a>
+<a href="../templates/launch-screen.html" class="leaf">Launch Screen</a>
+<a href="../templates/text-badge.html" class="leaf">Text Badge</a>
+<a href="../templates/text-design.html" class="leaf">Text Logo</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Chrome</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/chrome-promotional-marquee.html" class="leaf">Promotional Marquee</a>
+<a href="../templates/chrome-promotional-small.html" class="leaf">Promotional Small</a>
+<a href="../templates/chrome-screenshot.html" class="leaf">Screenshot</a>
+<a href="../templates/chrome-store-icon.html" class="leaf">Store Icon</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Product Hunt</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/product-hunt-gallery.html" class="leaf">Gallery</a>
+<a href="../templates/product-hunt-thumbnail.html" class="leaf">Thumbnail</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Print &bull; Flyer &bull; Poster</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/print-flyer-poster-a4.html" class="leaf">A4</a>
+</div>
+<div class="branch">
+<div class="header">
+<div class="label">Web Ads</div>
+<div class="icon"></div>
+</div>
+<a href="../templates/half-page-ad.html" class="leaf">Half Page</a>
+<a href="../templates/medium-rectangle-ad.html" class="leaf">Medium Rectangle</a>
+</div>
+<div class="divider"></div>
+<aside class="adListBox">
+<a href="../art-maker77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/art_maker/teaser_400.jpg" loading="lazy" alt="AI art generator. Turn text to art with AI. Our AI image generator can create art from a simple description.">
+<div class="label">AI Art Maker</div>
+</a>
+<a href="../restore-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/restorer/teaser_400.jpg" loading="lazy" alt="Restore pictures in seconds with AI. Automatically remove scratches, sharpen colors, and enhance faces, transforming tattered pictures into cherished memories. The service also works on modern images with faded colors or damaged parts.">
+<div class="label">AI Picture Restorer</div>
+</a>
+<a href="../personalize-art77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/art_remixer/teaser_400.jpg" loading="lazy" alt="Personalize art with AI. Create AI art by rendering photos and images in different art styles, from Van Gogh to Cezanne.">
+<div class="label">AI Art Personalizer</div>
+</a>
+<a href="../colorize-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/remaster/teaser_400.jpg" loading="lazy" alt="Colorize black and white pictures in seconds with AI. Great for family photos or historical images.">
+<div class="label">AI Picture Colorizer</div>
+</a>
+<a href="../remove-background77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/background_remover/teaser_400.jpg" loading="lazy" alt="Remove the background from images with AI in seconds. Our AI is tuned for extracting products and people and automatically erases the background. Hotpot helps e-commerce stores, marketing agencies, and other organizations automate the rote task of background removal.">
+<div class="label">AI Background Remover</div>
+</a>
+<a href="../enlarge-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/supersizer/teaser_400.jpg" loading="lazy" alt="Enlarge photos, game assets, and other raster images in seconds. Hotpot.ai can create images of higher resolution without losing quality and is optimized for e-commerce stores, app developers, and picture sites.">
+<div class="label">Enlarge Graphics With AI</div>
+</a>
+<a href="../file-translator77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/translator/teaser_400.jpg" loading="lazy" alt="Translate iOS, Android, YouTube, and other localization files into 70+ languages with AI.">
+<div class="label">Translate Files With AI</div>
+</a>
+<a href="../ai-copywriter77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/copywriter/teaser_400.jpg" loading="lazy" alt="Create ads, product descriptions, emails, blog posts, and more automatically with AI.">
+<div class="label">AI Copywriter</div>
+</a>
+</aside>
+</div>
+</div>
+<div id="rootYield">
+<div id="pageBox">
+<div id="controlBox">
+<a class="leaf" href='api-testing-tool.html'>General</a>
+<a class="leaf" href='hotpot.html'>Hotpot</a>
+<a class="leaf" href='twitter-1-1.html'>Twitter 1.1</a>
+<a class="leaf add">Add API</a>
+<a class="leaf beta">Private API</a>
+<div class="panel divider small"></div>
+<a class="leaf beta">Coinbase</a>
+<a class="leaf beta">Binance</a>
+<a class="leaf beta">Unsplash</a>
+<a class="leaf beta">Notion</a>
+<a class="leaf beta">Twilio</a>
+<a class="leaf beta">Reddit</a>
+<a class="leaf beta">DynamoDB</a>
+<a class="leaf beta">Wordpress</a>
+<a class="leaf beta">Shopify</a>
+<a class="leaf beta">Github</a>
+<a class="leaf beta">Salesforce</a>
+<a class="leaf beta">Firebase</a>
+<a class="leaf beta">Slack</a>
+<a class="leaf beta">GeoIP</a>
+<a class="leaf beta">Weather</a>
+<div class="panel divider"></div>
+<aside class="adListBox">
+<a href="../art-maker77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/art_maker/teaser_400.jpg" loading="lazy" alt="AI art generator. Turn text to art with AI. Our AI image generator can create art from a simple description.">
+<div class="label">AI Art Maker</div>
+</a>
+<a href="../restore-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/restorer/teaser_400.jpg" loading="lazy" alt="Restore pictures in seconds with AI. Automatically remove scratches, sharpen colors, and enhance faces, transforming tattered pictures into cherished memories. The service also works on modern images with faded colors or damaged parts.">
+<div class="label">AI Picture Restorer</div>
+</a>
+<a href="../personalize-art77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/art_remixer/teaser_400.jpg" loading="lazy" alt="Personalize art with AI. Create AI art by rendering photos and images in different art styles, from Van Gogh to Cezanne.">
+<div class="label">AI Art Personalizer</div>
+</a>
+<a href="../colorize-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/remaster/teaser_400.jpg" loading="lazy" alt="Colorize black and white pictures in seconds with AI. Great for family photos or historical images.">
+<div class="label">AI Picture Colorizer</div>
+</a>
+<a href="../remove-background77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/background_remover/teaser_400.jpg" loading="lazy" alt="Remove the background from images with AI in seconds. Our AI is tuned for extracting products and people and automatically erases the background. Hotpot helps e-commerce stores, marketing agencies, and other organizations automate the rote task of background removal.">
+<div class="label">AI Background Remover</div>
+</a>
+<a href="../enlarge-picture77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/supersizer/teaser_400.jpg" loading="lazy" alt="Enlarge photos, game assets, and other raster images in seconds. Hotpot.ai can create images of higher resolution without losing quality and is optimized for e-commerce stores, app developers, and picture sites.">
+<div class="label">Enlarge Graphics With AI</div>
+</a>
+<a href="../file-translator77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/translator/teaser_400.jpg" loading="lazy" alt="Translate iOS, Android, YouTube, and other localization files into 70+ languages with AI.">
+<div class="label">Translate Files With AI</div>
+</a>
+<a href="../ai-copywriter77a4.html?s=side-ad" class="ad" target="_blank">
+<img src="../images/site/ai/copywriter/teaser_400.jpg" loading="lazy" alt="Create ads, product descriptions, emails, blog posts, and more automatically with AI.">
+<div class="label">AI Copywriter</div>
+</a>
+</aside>
+</div>
+<main id="mainBox">
+<h1> Twitter API 1.1 Testing Tool </h1>
+<div id="overviewBox">
+<div class="text">
+<p>
+Test and create code for the Twitter API (1.1). Our API templates make integration easier than Postman.
+</p>
+</div>
+</div>
+<div id="rootMenuBox">
+<div class="button submit" title="Run request (Cmd + Return)">Run</div>
+<div class="button code" title="Code (Cmd + ')">Code</div>
+<div class="button text share" title="Share (Cmd + K)">Share</div>
+<div class="button text save" title="Share (Cmd + S)">Save</div>
+<div class="button text stress" title="Run stress tests">Stress Test</div>
+<div class="button text templatize" title="Templatize">Templatize</div>
+</div>
+<div id="inputOutputBox">
+<div id="inputBox">
+<div class="topBox">
+<div class="commonBox">
+<div class="propertyBox methodBox" hotpot-property-id="method">
+<select class="optionList value"></select>
+</div>
+<div class="propertyBox urlBox" hotpot-property-id="url">
+<input class="value" type="text" placeholder="URL" style="display:none">
+<select class="optionList"></select>
+</div>
+</div>
+<div class="menuBox nav fullRequest">
+<div class="option queryString" hotpot-option="queryString">Query String</div>
+<div class="option body" hotpot-option="body">Body</div>
+<div class="option header" hotpot-option="header">Header</div>
+<div class="option authorization" hotpot-option="authorization">Authorization</div>
+</div>
+</div>
+<div class="fullRequest">
+<div class="panelBox" hotpot-panel-id="queryString" style="display:none"></div>
+<div class="panelBox" hotpot-panel-id="header" style="display:none"></div>
+<div class="panelBox" hotpot-panel-id="body" style="display:none">
+<select class="optionList">
+<option value="none">None</option>
+<option value="x-www-form-urlencoded">x-www-form-urlencoded</option>
+<option value="form-data">form-data</option>
+<option value="json">JSON</option>
+</select>
+<div class="bodyContent">
+<div class="panelBox fullRequest" hotpot-panel-id="body/form-data" style="display:none"></div>
+<div class="panelBox fullRequest" hotpot-panel-id="body/x-www-form-urlencoded" style="display:none"></div>
+<div class="panelBox fullRequest" hotpot-panel-id="body/json" style="display:none">
+<div class="propertyBox textarea" hotpot-property-id="body/json/data">
+<div class="keyBox" style="display:none">
+<div class="label"></div>
+<input class="key" type="text" value="data" style="display:none">
+</div>
+<textarea class="value" placeholder="Enter valid JSON"></textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="panelBox" hotpot-panel-id="authorization" style="display:none">
+<select class="optionList">
+<option value="none">None</option>
+<option value="basic">Basic</option>
+<option value="bearer">Bearer</option>
+<option value="oAuth2">OAuth 2.0</option>
+<option value="custom">Custom</option>
+</select>
+<div class="content option">
+<div class="panelBox" hotpot-panel-id="authorization/basic" style="display:none">
+<div class="propertyBox text" hotpot-property-id="authorization/basic/username">
+<div class="keyBox">
+<input type="text" class="label" value="Username" disabled>
+</div>
+<input class="value" type="text" placeholder="Value">
+</div>
+<div class="propertyBox text" hotpot-property-id="authorization/basic/password">
+<div class="keyBox">
+<input type="text" class="label" value="Password" disabled>
+</div>
+<input class="value" type="text" placeholder="Value">
+</div>
+</div>
+<div class="panelBox" hotpot-panel-id="authorization/bearer" style="display:none">
+<div class="propertyBox text" hotpot-property-id="authorization/bearer/token">
+<div class="keyBox">
+<input type="text" class="label" value="Token" disabled>
+</div>
+<input class="value" type="text" placeholder="Value">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="resultBox box horizontal">
+<div id="outputListBox">
+<div class="outputBox" style="display:none">
+<div class="menuBox nav main">
+<div class="status"></div>
+<div class="option body selected" hotpot-option="body">Body</div>
+<div class="option header" hotpot-option="header">Header</div>
+</div>
+<div class="statusBox">
+<div class="icon loading" style="display:none"></div>
+</div>
+<div class="contentBox" style="display:none">
+<div class="option body" hotpot-option="body">
+<div class="menuBox nav body">
+<div class="option pretty" hotpot-option="pretty">Pretty</div>
+<div class="option raw" hotpot-option="raw">Raw</div>
+<div class="option mime" hotpot-option="mime">JSON</div>
+</div>
+<div class="bodyContent">
+ <div class="option pretty"></div>
+<div class="option raw"></div>
+<div class="option mime"></div>
+</div>
+</div>
+<div class="option propertyList header" hotpot-option="header"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div id="templateBox" style="display:none">
+<div class="outputBox">
+<div class="header">
+<div class="propertyBox">
+<div class="key">Key 1:</div>
+<div class="value">Value</div>
+</div>
+</div>
+</div>
+<div class="panelBox formBox">
+<div class="propertyBox text">
+<div class="menuBox floating property">
+<div class="button icon delete"></div>
+<div class="button icon add"></div>
+</div>
+<div class="isActiveBox" style="display:none">
+<input type="checkbox" class="checkmark" checked>
+</div>
+<div class="keyBox">
+<div class="label"></div>
+<input class="key" type="text" placeholder="Key" style="display:none">
+</div>
+<div class="divider" style="display:none"></div>
+<div class="valueBox">
+<div class="menuBox floating" style="display:none">
+<div class="button icon file"></div>
+</div>
+<div class="content">
+<input class="value" type="text" placeholder="Value">
+</div>
+</div>
+</div>
+<div class="propertyBox file">
+<div class="keyBox">
+<div class="label"></div>
+<input class="key" type="text" style="display:none">
+</div>
+<div class="fileBox">
+<div class="buttonBox">
+<input class="value" type="file" style="display:none">
+<div class="button icon upload"></div>
+<div class="button icon library" style="display:none"></div>
+</div>
+<div class="filename"></div>
+</div>
+</div>
+<div class="propertyBox select">
+<div class="keyBox">
+<div class="label"></div>
+<input class="key" type="text" style="display:none">
+</div>
+<select class="value"></select>
+</div>
+<div class="propertyBox textarea">
+<div class="keyBox">
+<div class="label"></div>
+<input class="key" type="text" style="display:none">
+</div>
+<textarea class="value" placeholder="Enter valid JSON"></textarea>
+</div>
+</div>
+</div>
+</div>
+<iframe id="playground" class="floatingMenu" src="../components/playground.html" style="display:none"></iframe>
+<script>
+
+
+// ================================================================================
+// Global Vars
+// ================================================================================
+// View Variables
+let RootMenuBox = null;
+let ControlBox = null;
+let InputBox = null;
+let OutputListBox = null;
+let AuthorizationBox = null;
+let Playground = null;
+
+// Model Variables
+let Db = null;
+let FunctionList = null;
+
+// Log Variables
+let LogCategoryName = 'Stubbi';
+
+
+// TODO: Define validation logic only before running code or also when generating code?
+async function run() {
+	// Get data.
+	let data = getRequestInputData(true);
+
+	// Get origin URL.
+	let originUrl = data.url;
+
+	// Exit if invalid origin?
+	if (!isValidUrl(originUrl)) {
+		return;
+	}
+
+	// Exit if invalid JSON request?
+	try {
+		if (getBodyType() === 'json') {
+			JSON.parse(data.body);
+		}
+	} catch (e) {
+		MessageClass.showMessage('Invalid JSON in the request body. ' + e);
+		return;
+	}
+
+	// Default run URL to origin URL.
+	let runUrl = originUrl;
+
+	// Using proxy server?
+	if (isProxyOn()) {
+		runUrl = 'https://dawn-pine-15d1.hotpot.workers.dev/';
+		data.header['hotpot-origin-url'] = originUrl;
+	}
+
+	if (isBlank(originUrl) ||
+		(!originUrl.startsWith('https:///') &&
+		!originUrl.startsWith('http://'))) {
+		MessageClass.showMessage('Please enter a valid URL');
+		return;
+	}
+
+	// Create output box.
+	let outputBox = $('#outputListBox .outputBox').show();
+
+	// Hide output box.
+	outputBox.find('.contentBox').hide();
+
+	// Reset status.
+	outputBox.find('.status')
+				.removeClass()
+				.addClass('status')
+				.empty();
+
+	// Show loading icon.
+	outputBox.find('.icon.loading').show();
+
+	// Set request settings.
+	let settings = {
+		url: runUrl,
+		method: data.method,
+		headers: data.header,
+		timeout: data.timeout,
+		contentType: data.contentType,
+		processData: data.processData,
+		data: data.body,
+        xhr: function() {// Seems like the only way to get access to the xhr object
+					// Create XMLHttpRequest object.
+					let xhr = new XMLHttpRequest();
+
+					// TODO: Fix this!!! Ascertain response types more robustly.
+					// Handle event when response headers arrive.
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 2) {
+					   	if (xhr.status == 200) {
+					   		let type = xhr.getResponseHeader('content-type');
+					   		if (type) {
+						   		if (type.includes('image/index.html') || type.includes('application/octet-stream')) {
+						   			type = 'blob';
+						   		}
+						   		xhr.responseType = type;
+					   		}
+
+					   	} else {
+					   		xhr.responseType = 'text';
+					   	}
+						}
+					};
+
+					return xhr;
+        		},
+	};
+
+	try {
+		$.ajax(settings)
+		 	.always((responseBody, responseStatus, xhr) => {
+
+		 		// TODO: clean this up
+		 		if (responseBody && responseBody.getAllResponseHeaders) {
+		 			xhr = responseBody;
+		 			responseBody = xhr.responseText;
+		 		}
+
+		 		requestDidFinish(outputBox, responseBody, xhr);
+		 	});
+	} catch (error) {
+		errorDidOccur(error);
+	}
+}
+
+
+function errorDidOccur(error, resultBox) {
+	// Set error text.
+	let errorText = error ? error : 'no details';
+	if (errorText instanceof Object) {
+		errorText = JSON.stringify(errorText);
+	}
+
+	MessageClass.showMessage(`Sorry, we had a hiccup: ${errorText}`);
+
+	// Show message in result box?
+	if (resultBox) {
+		resultBox.find('.errorBox .message').text(errorText);
+		resultBox.find('.errorBox').show();
+	}
+
+	// Log event.
+	logEvent(LogCategoryName,
+				'Error',
+				`Text: ${errorText}`
+				);
+}
+
+
+function isValidUrl(url) {
+	let result = false;
+
+	try {
+		const urlParts = new URL(url.html);
+
+		let directIpRegEx = /^[0-9\.]*$/;
+		result = !urlParts.hostname.match(directIpRegEx);
+
+		if (!result) {
+			MessageClass.showMessage('Direct IPs are in beta. Contact us to join the beta.');
+		}
+	} catch (e) {
+		MessageClass.showMessage('Error: ' + e);
+	}
+
+	return result;
+}
+
+
+function createHotpotXhr() {
+	let xhr = new XMLHttpRequest();
+
+	// Handle event for when response headers arrive.
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 2) {
+	   	if (xhr.status == 200) {
+	   		xhr.responseType = responseType
+	   	} else {
+	   		xhr.responseType = 'text';
+	   	}
+		}
+	};
+
+	return xhr;
+}
+
+
+function isProxyOn() {
+	//return false;
+	return true;
+}
+
+
+function requestDidFinish(outputBox, responseBody, xhr) {
+	// Render request status code.
+	let statusBox = outputBox.find('.menuBox .status');
+
+	let status = xhr.status;
+
+	let statusClass = status === 200 ? 'success' : 'error';
+	statusBox.addClass(statusClass);
+	statusBox.text(status);
+
+	// Get response headers.
+	let headerJson = xhrToHeaderJson(xhr);
+
+	// Render response headers.
+	renderResponseHeader(headerJson, outputBox);
+
+	// Render body.
+	let contentType = headerJson['content-type'];
+	renderResponseBody(outputBox, responseBody, contentType);
+
+	// Show content box.
+	outputBox.find('.contentBox').show();
+
+	// Hide loading icon.
+	outputBox.find('.icon.loading').hide();
+
+	// Default to show body.
+	outputBox.find('.menuBox .option.body').click();
+}
+
+
+function xhrToHeaderJson(xhr) {
+	// Set vars.
+	let headerJson = {};
+	let propertyDelimiter = '\r\n';
+	let keyValueDelimiter = ':';
+
+	// Get header string.
+	let headerString = xhr.getAllResponseHeaders();
+
+	if (headerString) {
+		// Split string into array of key-value strings.
+		let headerArray = headerString.split(propertyDelimiter);
+
+		// For each property string, split into key and value.
+		for (const propertyString of headerArray) {
+			let keyValueArray = propertyString.split(keyValueDelimiter);
+			let key = keyValueArray[0];
+			headerJson[key] = xhr.getResponseHeader(key);
+		}
+	}
+
+	return headerJson;
+}
+
+
+function renderResponseHeader(header, outputBox) {
+	// Get list box from @outputBox.
+	let listBox = outputBox.find('.contentBox .header');
+
+	// Sort headers, show custom ones first.
+
+	// Get scrubbed key list.
+	let keyList = Object.keys(header);
+	keyList = scrubArray(keyList);
+
+	for (const key of keyList) {
+		// Clone element.
+		let propertyBox = $('#templateBox .outputBox .header .propertyBox').clone();
+
+		// Set values.
+		propertyBox.find('.key').text(key);
+		propertyBox.find('.value').text(header[key]);
+
+		// Append to @listBox.
+		listBox.append(propertyBox);
+	}
+}
+
+
+function renderResponseBody(outputBox, responseBody, contentType) {
+	let prettyBox = outputBox.find('.contentBox .bodyContent .pretty');
+	prettyBox.empty();
+
+	let rawBox = outputBox.find('.contentBox .bodyContent .raw');
+	rawBox.empty();
+
+	let bodyContent = responseBody;
+
+	let prettyElement = null;
+
+	// Default to text if no explicit content type provided.
+	if (!contentType) {
+		contentType = 'text/plain';
+	}
+
+	// TODO: clean up this logic!!!
+	let isImageType = contentType.includes('image/index.html') || contentType.includes('application/octet-stream');
+
+	if (bodyContent && isImageType) {
+		let imageType = 'image/png';
+
+		// Blob -> data URL.
+		let dataUrl = URL.createObjectURL(bodyContent);
+		let imgElement = $(document.createElement('img')).attr('src', dataUrl);
+		prettyElement = imgElement;
+
+	} else if (contentType.includes('application/json')) {
+		let prettyJson = renderjson.set_icons('+ ', '-- ')
+											.set_show_to_level('all')
+											(bodyContent);
+		prettyElement = prettyJson;
+		bodyContent = JSON.stringify(bodyContent);
+
+	} else if (contentType.includes('text/html')) {
+		let iframe = $(document.createElement('iframe'));
+
+		// Add content to iframe and add iframe to the page.
+		outputBox.find('.contentBox .bodyContent .mime').html(iframe);
+		iframe[0].contentWindow.document.write(bodyContent);
+
+		// Set height dynamically. Hackenstein. Ugh, Chrome!
+		setIframeHeight(iframe);
+
+		// Set pretty element.
+		let preElement = $(document.createElement('pre'));
+		preElement.text(bodyContent);
+		prettyElement = preElement;
+
+	} else {
+		prettyElement = $(document.createElement('div'));
+		prettyElement.text(bodyContent);
+
+	}
+
+	// TODO: Clean up this logic.
+	outputBox.find('.contentBox .menuBox.body').toggle(!isImageType);
+	if (!isImageType) {
+		rawBox.text(bodyContent);
+	}
+
+	if (prettyElement) {
+		prettyBox.html(prettyElement);
+	}
+
+	// Update MIME box.
+	if (contentType.includes('text/html')) {
+		outputBox.find('.contentBox .option.body .menuBox.nav .option.mime').text('HTML').show();
+	} else {
+		outputBox.find('.contentBox .option.body .menuBox.nav .option.mime').hide();
+	}
+
+	// Set which output box to show.
+	if (contentType.includes('text/html')) {
+		outputBox.find('.contentBox .option.body .menuBox.nav .option.mime').click();
+	} else {
+		outputBox.find('.contentBox .menuBox.body .option.pretty').click();
+	}
+}
+
+
+// Very frustrating function. Most Iframe issues are documented here: https://stackoverflow.com/questions/17158932/how-to-detect-when-an-iframe-has-already-been-loaded.
+// We require special handling due to writing content inline instead of loading from a URL. This seemingly causes the document readyState to perpetually
+// remain in the loading state. The load event also fires instantly in Chrome (ugh, Chrome!), so we cannot use this, either.
+// Setting the height after a slight timeout is the best compromise at this time. Ugh!!!
+function setIframeHeight(iframe) {
+	let dur = 1500;
+
+	setTimeout(function() {
+		iframe.css('height', iframe[0].contentWindow.document.body.scrollHeight + 'px');
+		iframe.attr('hotpot-set-height', true);
+	}, dur);
+}
+
+
+function renderPage() {
+	// Get function list.
+	let functionList = FunctionList;
+
+	let isFull = isFullRequest();
+
+	InputBox.find('.urlBox select').toggle(!isFull);
+	InputBox.find('.urlBox input[type="text"]').toggle(isFull);
+
+	if (isFull) {
+		setMethodList(functionList[0].methodList);
+
+		for (const propertyData of functionList[0].propertyList) {
+			let formId = getFormId(propertyData.id);
+			let formBox = $('.panelBox[hotpot-panel-id="' + formId + '"]');
+			renderFormProperty(formBox, propertyData, true);
+		}
+
+	} else {
+		InputBox.find('.fullRequest').hide();
+
+		// Render each function.
+		for (const functionData of functionList) {
+			// Render URL option.
+			let url = functionData.url;
+			let urlOption = $(document.createElement('option'));
+			urlOption.attr('value', url);
+			urlOption.text(url);
+
+			// Add URL option to select menu.
+			InputBox.find('.urlBox select').append(urlOption);
+
+			// Set function ID to URL.
+			functionData['id'] = functionData.url;
+
+			// Render form for this function.
+			renderForm(functionData);
+		}
+	}
+
+	loadPageData();
+}
+
+
+// TODO: In a file full of ugly functions, this may be the most grusome. Please fix ASAP!
+async function loadPageData() {
+	// Get ID.
+	let functionId = getURLParameter('id');
+
+	if (!functionId) {
+		return;
+	}
+
+	let data = null;
+
+	// Set query.
+	let query = Db.db_
+						.collection('stubbi')
+						.where('id', '==', functionId);
+
+	// Run query.
+	try {
+		// Execute query.
+		const querySnapshot = await query.get();
+
+		// Found data?
+   	if (querySnapshot.docs.length && querySnapshot.docs[0]) {
+   		data = querySnapshot.docs[0].data();
+   	}
+	} catch(e) {
+		debug('Error in loadPageData(): ' + e);
+	}
+
+	// No data?
+	if (!data) {
+		MessageClass.showMessage('No data found for ' + functionId);
+	}
+	else {
+		let propertyList = data.propertyList;
+
+		// Get URL.
+		let url = propertyList.filter(x => x.id === 'url')[0].value;
+
+		// Get root panel box.
+		let rootBox = isFullRequest() ? InputBox : $('[hotpot-panel-id="' + url + '"]');
+
+		// Render each property.
+		for (const propertyJson of propertyList) {
+			// Get property ID and value.
+			let propertyId = propertyJson.id;
+			let value = propertyJson.value;
+
+			// Update property box.
+			let propertyBox = rootBox.find('[hotpot-property-id="' + propertyId + '"]');
+
+			// Found property box?
+			if (propertyBox.length) {
+				setPropertyBoxValue(propertyBox, value);
+			}
+
+			// Nope, but create property box for full requests.
+			else {
+				if (isFullRequest()) {
+					let formId = getFormId(propertyId);
+					let panelBox = $('[hotpot-panel-id="' + formId + '"]');
+
+					renderPanelPropertyFromIdValue(panelBox, propertyId, value, true);
+				}
+				else {
+					debug('Error in loadPageData(): nowhere to render property. Property ID: ' + propertyId);
+				}
+			}
+		}
+
+		// Full request? Do special handling.
+		if (isFullRequest()) {
+			let idList = propertyList.map( x => x.id );
+			let bodyType = getBodyTypeFromPropertyIdList(idList);
+			$('[hotpot-panel-id="body"] select').val(bodyType);
+
+			let authType = getAuthorizationTypeFromPropertyIdList(idList);
+			$('[hotpot-panel-id="authorization"] .optionList').val(authType);
+
+			// Make sure query string form matches URL.
+			didSetQueryString(true);
+
+		// Handle Hotpot request.
+		} else {
+			// TODO: merge this logic with setting common box values. SOOO UGLY.
+			// Set URL manually because this is an edge case not handled by generic property element setter
+			$('[hotpot-property-id="url"] select').val(url)
+															  .trigger('change');
+			$('[hotpot-property-id="method"] select').val(propertyList.filter(x => x.id === 'method')[0].value)
+																  .trigger('change');
+		}
+	}
+}
+
+
+// TODO: this feels fragile. Clean up logic!!!
+function getBodyTypeFromPropertyIdList(idList) {
+	let typeList = ['form-data', 'x-www-form-urlencoded', 'json'];
+
+	let type = getTypeFromPropertyIdList('body', typeList, idList);
+
+	return type ? type : 'none';
+}
+
+
+function getAuthorizationTypeFromPropertyIdList(idList) {
+	let typeList = ['basic', 'bearer'];
+	let type = getTypeFromPropertyIdList('authorization', typeList, idList);
+
+	return type ? type : 'none';
+}
+
+
+function getTypeFromPropertyIdList(rootType, typeList, idList) {
+	// Set default result.
+	let type = null;
+
+	for (const t of typeList) {
+		if (idList.filter( x => x.startsWith(`${rootType}/${t}/`) ).length > 0) {
+			type = t;
+			break;
+		}
+	}
+
+	return type;
+}
+
+
+function renderForm(formData) {
+	// Create form box.
+	let formBox = $(document.createElement('div'));
+	formBox.addClass('panelBox templateRequest');
+	formBox.attr('hotpot-panel-id', formData.id);
+
+	// Add each input property.
+	for (const propertyData of formData.propertyList) {
+		renderFormProperty(formBox, propertyData, false);
+	}
+
+	// Add form to page.
+	InputBox.append(formBox);
+}
+
+
+// TODO: Render JSON form bodies dynamically, not statically!
+// TODO: Set placeholder for textarea properties based on content type. Right now, assumes content is always JSON. Bad!
+function renderFormProperty(formBox, propertyData, isFullRequest) {
+	// Store type for convenience.
+	let inputType = propertyData.inputType;
+
+	// Unknown type? Throw error.
+	if (inputType !== 'text' &&
+		 inputType !== 'file' &&
+		 inputType !== 'textarea' &&
+		 inputType !== 'select') {
+		throw Error('Unknown input type. Data: ' + JSON.stringify(propertyData));
+	}
+
+	// If here, we have a known input type so create this element.
+	// Create clone of input element template.
+	let inputElement = $('#templateBox .formBox .propertyBox.' + inputType).clone();
+
+	// Select input type? Add options for select menu.
+	if (inputType === 'select') {
+		for (const valueOption of propertyData.valueOptionList) {
+			// Create option element.
+			let optionElement = $(document.createElement('option'));
+			optionElement.attr('value', valueOption);
+			optionElement.text(valueOption);
+
+			// Append to select element of input element.
+			inputElement.find('select').append(optionElement);
+		}
+	}
+
+	// Update generic properties for input.
+	inputElement.find('.label').text(propertyData.label);
+	inputElement.attr('hotpot-property-id', propertyData.id);
+	inputElement.attr('hotpot-is-required', propertyData.isRequired);
+
+	// Set key?
+	let key = getKeyFromPropertyId(propertyData.id);
+	let keyElement = inputElement.find('.keyBox .key');
+	if (key && keyElement.length) {
+		keyElement.val(key);
+	}
+
+	// Set initial value?
+	if (propertyData.initialValue) {
+		inputElement.find('.value').val(propertyData.initialValue);
+	}
+
+	// Enable full request functionality?
+	if (isFullRequest) {
+		setPropertyBoxForFullRequest(inputElement, propertyData.id);
+	}
+
+	// Add to @formBox.
+	formBox.append(inputElement);
+}
+
+
+// ================================================================================
+// Full Request Functions
+// ================================================================================
+// TODO: merge with how template requests deal with query strings.
+function didSetQueryString(isQueryStringGroundTruth) {
+	// Get elements.
+	let queryStringForm = getPanelBox('queryString');
+	let urlBox = InputBox.find('.urlBox .value');
+
+	// Parse URL into components.
+	let parsedUrl = parseUrl(isQueryStringGroundTruth);
+	let origin = parsedUrl.origin;
+	let parameterList = parsedUrl.parameterList;
+
+	// Rebuild URL.
+	let url = origin;
+	if (parameterList.length) {
+		parameterString = parameterList
+									.map( x => x[0] + '=' + x[1])
+									.join('&');
+		url += ('?' + parameterString);
+	}
+
+	// Update URL box.
+	urlBox.val(url);
+
+	// Reset query string form.
+	queryStringForm.empty();
+	for (const parameter of parameterList) {
+		renderPanelPropertyFromIdValue(queryStringForm, 'queryString/' + parameter[0], parameter[1], true);
+	}
+
+	// Ensure query string form has >= 1 row.
+	if (!parameterList.length) {
+		renderPanelPropertyFromIdValue(queryStringForm, 'queryString/index.html', null, true);
+	}
+}
+
+
+function parseUrl(isQueryStringGroundTruth) {
+	// Set default result.
+	let origin = null;
+	let parameterList = [];
+
+	// Set elements.
+	let urlBox = InputBox.find('.urlBox .value');
+
+	// Parse URL.
+	let url = urlBox.val();
+	let urlSplitArray = url.split('?');
+	origin = urlSplitArray[0];
+
+	// Get parameters as string, if any exist, after splitting on question mark.
+	let parameterString = urlSplitArray.length > 1 ? urlSplitArray[1] : null;
+
+	// Treat query string as ground truth?
+	if (isQueryStringGroundTruth) {
+		if (parameterString) {
+			parameterList = parameterString
+									.split('&')
+									.map( x => x.split('=') );
+		}
+
+	// Nope, grab parameters from query string form, but only use active properties.
+	} else {
+		let queryStringPropertyBoxList = getPanelBox('queryString').find('.propertyBox');
+		parameterList = getKeyValueList(queryStringPropertyBoxList, true);
+	}
+
+	// Scrub invalid parameters.
+	parameterList = scrubQueryStringParameterList(parameterList);
+
+	// Return result.
+	return {
+		origin: origin,
+		parameterList: parameterList
+	}
+}
+
+
+// TODO: merge with @getRawPropertyData().
+// TODO: use @isActiveOnly.
+function getKeyValueList(propertyBoxList, isActiveOnly) {
+	let list = propertyBoxList
+					.get()
+					.filter( x => isPropertyBoxActive($(x)) )
+					.map( x => {
+						return [
+							getPropertyBoxKey($(x)),
+							getPropertyBoxValue($(x))
+						]
+					});
+
+	return list;
+}
+
+
+function scrubQueryStringParameterList(parameterList) {
+	return parameterList.filter( x => !isBlank(x[0]) || !isBlank(x[1]) );
+}
+
+
+function renderPanelPropertyFromIdValue(formBox, id, value, isFullRequest) {
+	let propertyData = {
+		id: id,
+		inputType: "text",
+		valueTypeList: ["text/plain"],
+	}
+
+	if (value) {
+		propertyData["initialValue"] = value;
+	}
+
+	renderFormProperty(formBox, propertyData, isFullRequest);
+}
+
+
+function setPropertyBoxForFullRequest(propertyBox, propertyId) {
+	propertyBox.find('.keyBox .label').hide();
+	propertyBox.find('.keyBox .key').show();
+
+	propertyBox.find('.isActiveBox').show();
+	propertyBox.find('.divider').show();
+
+	if (propertyId) {
+		let idArray = splitPropertyId(propertyId);
+		let key = idArray[idArray.length - 1];
+
+		if (isBlank(key)) {
+			propertyBox.find('.keyBox .key').val(key);
+		}
+	}
+}
+
+
+function splitPropertyId(id) {
+	let delimiter = '../index.html';
+	return  id.split(delimiter);
+}
+
+
+// TODO: Define validation logic here or only before running code?
+function getRequestInputData(isRunning) {
+	// Set default result.
+	let requestData = {};
+
+	// Add method.
+	let methodPropertyBox = InputBox.find('.commonBox .methodBox');
+	requestData['method'] = getPropertyBoxValue(methodPropertyBox);
+
+	requestData['url'] = getRequestUrl();
+
+	// Add header.
+	requestData['header'] = getRequestHeaderData();
+
+	// Add body.
+	requestData['body'] = getRequestBodyData(isRunning);
+
+	// Add generic properties.
+	requestData['timeout'] = 0;
+	requestData['contentType'] = getRequestContentType();
+	requestData['processData'] = false;
+	requestData['followRedirects'] = true;
+
+	// Return result.
+	return requestData;
+}
+
+
+function getRequestUrl() {
+	// Get base URL.
+	let urlBox = InputBox.find('.commonBox .urlBox');
+	let url = getPropertyBoxValue(urlBox);
+
+	// Add URL, ensure it begins with http:// or https://.
+	if (!url.startsWith('http://') && !url.startsWith('https:///')) {
+		url = 'https://' + url;
+	}
+
+	// Template request? Append query string parameters from form.
+	if (!isFullRequest()) {
+		// Get property box list holding query string values.
+		let propertyBoxList = $('.templateRequest .propertyBox')
+										.get()
+										.filter( x => $(x).attr('hotpot-property-id').startsWith('queryString/index.html') )
+										.map( x => $(x) );
+
+		// Get key-value pairs from @propertyBoxList.
+		parameterList = getKeyValueList($(propertyBoxList), true);
+
+		// Turn @parameterList into string.
+		parameterString = parameterList
+									.map( x => x[0] + '=' + x[1])
+									.join('&');
+
+		url += ('?' + parameterString);
+	}
+
+	return url;
+}
+
+
+function getRequestContentType() {
+	let isJson = isFullRequest() && getBodyType() === 'json';
+	return isJson ? 'application/json' : false;
+}
+
+
+// Assumes header data is nested only one layer deep.
+function getRequestHeaderData() {
+	// Get raw property data.
+	let rawData = getRawPropertyData('header', true);
+
+	// Extract only keys and values from raw data.
+	let requestData = rawDataToKeyValueData(rawData);
+
+	// Add authorization data.
+	let authData = getAuthorizationData();
+	if (authData.header) {
+		for (const authKey of Object.keys(authData.header)) {
+			requestData[authKey] = authData.header[authKey];
+		}
+	}
+
+
+	// Return result or null if no properties found.
+	return requestData;
+}
+
+
+// Extracts only key and value data from raw property data.
+function rawDataToKeyValueData(rawData) {
+	let result = {};
+
+	for (const entry of Object.values(rawData)) {
+		let key = entry['key'];
+		let value = entry['value'];
+
+		result[key] = value;
+	}
+
+	return result;
+}
+
+
+function getRequestBodyData(isRunning) {
+	// Get raw property data.
+	let rawData = getRawPropertyData('body', true);
+
+	// Extract only keys and values from raw data.
+	let requestData = rawDataToKeyValueData(rawData);
+
+	// Return null if no data exists.
+	if (!Object.keys(rawData).length) {
+		return null;
+	}
+
+	// If here, data exists but must reformat when running requests.
+	if (isRunning) {
+		let bodyType = getBodyType();
+
+		// Have JSON body?
+		if (bodyType === 'json') {
+			// @requestData should only contain one key-value pair, the user-entered JSON.
+			if (Object.values(requestData).length !== 1) {
+				debugError('Error in getRequestBodyData(): expected only one key-value pair for JSON body type. Total: ' + Object.values(requestData).length);
+			} else {
+				requestData = Object.values(requestData)[0];
+			}
+
+		// Have form-data body?
+		} else if (bodyType === 'form-data') {
+			// Create @FormData object to hold values.
+			let form = new FormData();
+
+			// Map each property to @form.
+			for (const keyValue of Object.entries(requestData)) {
+				form.append(keyValue[0], keyValue[1]);
+			}
+
+			requestData = form;
+		}
+	}
+
+	return requestData;
+}
+
+
+// Return true if @propertyBox lacks active/inactive option or if the active status is chosen.
+function isPropertyBoxActive(propertyBox) {
+	let isActiveBox = propertyBox.find('.isActiveBox');
+
+	return isActiveBox.length === 0 ||
+			 isActiveBox.find('input').prop('checked');
+}
+
+
+// TODO: Clean up logic! Can refactor code.
+function getRawPropertyData(panelId, isActiveOnly) {
+	// Set default result.
+	let result = {};
+
+	// Set the root panel box.
+	let rootPanelBox = getRootPanelBox();
+
+	// Get list of property boxes.
+	let propertyBoxSelector = '[hotpot-property-id]';
+	let propertyBoxList = rootPanelBox.find(propertyBoxSelector);
+
+
+
+	// TODO: clean up logic.
+	// Add common properties for easy requests.
+	if (!isFullRequest()) {
+		propertyBoxList = propertyBoxList.add(InputBox.find('.commonBox').find(propertyBoxSelector));
+	}
+
+
+
+	for (const propertyBoxParam of propertyBoxList) {
+		// jQuerify property box.
+		let propertyBox = $(propertyBoxParam);
+
+		// Get property ID.
+		let id = getPropertyBoxId(propertyBox);
+
+		// Skip properties unrelated to this panel?
+		if (panelId && !id.startsWith(panelId + '/')) {
+			continue;
+		}
+
+		// Skip unchosen body and authorization properties?
+		if (isFullRequest()) {
+			let bodyPanelId = 'body/' + getBodyType();
+			let authorizationPanelId = 'authorization/' + getAuthorizationType();
+			if (id.startsWith('body/index.html') && !id.startsWith(bodyPanelId) ||
+				 id.startsWith('authorization/index.html') && !id.startsWith(authorizationPanelId)) {
+				continue;
+			}
+		}
+
+		// Skip inactive properties?
+		if (isActiveOnly && !isPropertyBoxActive(propertyBox)) {
+			debug('Skipping inactive property: ' + propertyBox.attr('hotpot-property-id'));
+			continue;
+		}
+
+		// If here, get key and value from property box.
+		let key = getPropertyBoxKey(propertyBox);
+		let value = getPropertyBoxValue(propertyBox);
+
+		// Save property data, but only if key or value is defined.
+		if (!isBlank(key) || !isBlank(value)) {
+			result[id] = {
+				key: key,
+				value: value,
+				isActive: isPropertyBoxActive(propertyBox)
+			}
+		}
+	}
+
+	return result;
+}
+
+
+function getPanelBox(panelId) {
+	return $('[hotpot-panel-id="' + panelId + '"]');
+}
+
+
+function getPropertyBoxId(propertyBox) {
+	// Set default property ID.
+	let propertyId = propertyBox.attr('hotpot-property-id');
+
+	// Get containing panel.
+	let panelBox = propertyBox.closest('.panelBox');
+	let panelId = panelBox.attr('hotpot-panel-id');
+
+	// Override default property ID?
+	if (panelId &&
+			(panelId.startsWith('body') || panelId.startsWith('header'))) {
+		propertyId = panelId + '/' + getPropertyBoxKey(propertyBox);
+	}
+
+	// Return result.
+	return propertyId;
+}
+
+
+function setPropertyBoxValue(propertyBox, value) {
+	// Ignore file types for now.
+	if (propertyBox.hasClass('file')) {
+		return;
+	}
+
+	// If here, set value for @propertyBox.
+	if (propertyBox.find('.value').length) {
+		propertyBox.find('.value').val(value);
+	} else {
+		propertyBox.val(value);
+	}
+}
+
+
+function getPropertyBoxValue(propertyBox) {
+	if (propertyBox.find('input[type="file"]').length) {
+		return propertyBox.find('input[type="file"]')[0].files[0];
+
+	} else {
+		return propertyBox.find('.value').val();
+
+	}
+}
+
+
+function getPropertyBoxKey(propertyBox) {
+	let keyBox = propertyBox.find('.keyBox .key');
+
+	if (keyBox.length) {
+		return keyBox.val();
+	} else {
+		return getKeyFromPropertyId(propertyBox.attr('hotpot-property-id'));
+	}
+}
+
+
+// TODO: Clean up this logic?
+function getBodyType() {
+	let type = InputBox.find('.panelBox[hotpot-panel-id="body"] select').val();
+
+	if (!isFullRequest()) {
+		let rawData = getRawPropertyData();
+		type = getBodyTypeFromPropertyIdList(Object.keys(rawData));
+	}
+
+	return type;
+}
+
+
+function getKeyFromPropertyId(idString) {
+	// Set variables.
+	let delimiter = '../index.html';
+
+	// Split ID path into parts.
+	let idPathArray = idString.split(delimiter);
+	let key = idPathArray[idPathArray.length-1];
+
+	// Return key.
+	return key;
+}
+
+
+function getFormId(propertyIdString) {
+	let formId = null;
+
+	if (propertyIdString.startsWith('body/form-data')) {
+		formId = 'body/form-data';
+	}
+	else if (propertyIdString.startsWith('body/x-www-form-urlencoded')) {
+		formId = 'body/x-www-form-urlencoded';
+	}
+	else if (propertyIdString.startsWith('body/json')) {
+		formId = 'body/json';
+	}
+	else if (propertyIdString.startsWith('queryString')) {
+		formId = 'queryString';
+	}
+	else if (propertyIdString.startsWith('header')) {
+		formId = 'header';
+	}
+
+	return formId;
+}
+
+
+// ================================================================================
+// File Upload Functions
+// ================================================================================
+async function didChangeFileElement(fileElement) {
+	// Get file data.
+	try {
+	   // Get image file.
+	   let imageFile = fileElement[0].files[0];
+
+	   fileElement.closest('.fileBox').find('.filename').text(imageFile.name);
+
+	// Handle error.
+	} catch (error) {
+		errorDidOccur(error);
+	}
+}
+
+
+// ================================================================================
+// Playground Functions
+// ================================================================================
+function playgroundDidSendCloseEvent() {
+	hidePlayground();
+}
+
+
+// ================================================================================
+// Keyboard Event Functions
+// ================================================================================
+function initKeyboardEvents() {
+   $(document).keydown(function(event) {
+      didKeyboardEvent(event);
+   });
+}
+
+
+function didKeyboardEvent(event) {
+   // Ctrl+return or Cmd+return pressed? Run.
+   if (didPressMetaKey1(event) && event.keyCode === 13) {
+      event.preventDefault();
+      didClickSubmitButton();
+   }
+
+   // Ctrl+Shift+C or Cmd+Shift+C pressed? Code.
+   else if (didPressMetaKey1(event) && event.keyCode === 222) {
+   	event.preventDefault();
+   	didClickCodeButton();
+   }
+
+   // Ctrl+K or Cmd+K pressed? Share.
+   else if (didPressMetaKey1(event) && event.keyCode === 75) {
+   	event.preventDefault();
+   	share();
+   }
+
+   // Ctrl+S or Cmd+S pressed? Save.
+   else if (didPressMetaKey1(event) && event.keyCode === 83) {
+   	event.preventDefault();
+   	didClickSaveButton();
+   }
+
+	// Esc pressed?
+   else if (event.keyCode === 27) {
+   	hidePlayground();
+   }
+}
+
+
+// ================================================================================
+// InputBox Functions
+// ================================================================================
+function initInputBox() {
+	initCommonInputList();
+	initFullRequestInputList();
+	initEasyRequestInputList();
+}
+
+
+function initCommonInputList() {
+	InputBox.on('click', '.button.upload', function() {
+		didClickUploadButton($(this));
+	});
+
+	InputBox.on('change', 'input[type="file"]', function() {
+		didChangeFileElement($(this));
+	});
+}
+
+
+function initFullRequestInputList() {
+	InputBox.find('.topBox .menuBox.nav .option').on('click', function() {
+		didPickFullRequestNavOption($(this));
+	});
+
+	InputBox.on('blur', '.urlBox .value', function() {
+		didBlurUrlInput($(this));
+	});
+
+	InputBox.on('mouseover', '.fullRequest .propertyBox', function() {
+		didMouseoverPropertyBox($(this));
+	});
+
+	InputBox.on('mouseleave', '.fullRequest .propertyBox', function() {
+		didMouseleavePropertyBox($(this));
+	});
+
+	InputBox.on('click', '.fullRequest .propertyBox .button.delete', function() {
+		didClickPropertyBoxDeleteButton($(this));
+	});
+
+	InputBox.on('click', '.fullRequest .propertyBox .button.add', function() {
+		didClickPropertyBoxAddButton($(this));
+	});
+
+	InputBox.on('change', '.fullRequest .isActiveBox input[type="checkbox"]', function() {
+		didClickPropertyBoxIsActiveCheckbox($(this));
+	});
+
+	InputBox.on('click', '.fullRequest .propertyBox .valueBox .button.file', function() {
+		didClickPropertyBoxToggleTypeButton($(this));
+	});
+
+	InputBox.on('change', '.fullRequest .panelBox[hotpot-panel-id="queryString"] .propertyBox input[type="text"]', function() {
+		didBlurQueryStringInput($(this));
+	});
+
+	InputBox.on('change', '.fullRequest .panelBox[hotpot-panel-id="body"] .optionList', function() {
+		didChangeBodyType($(this));
+	});
+
+	InputBox.on('change', '.fullRequest .panelBox[hotpot-panel-id="authorization"] .optionList', function() {
+		didChangeAuthorizationType($(this));
+	});
+}
+
+
+function initEasyRequestInputList() {
+	InputBox.on('change', '.urlBox select', function() {
+		didChangeFunction($(this));
+	});
+}
+
+
+function didChangeBodyType(selectElement) {
+	showPanel('body');
+}
+
+
+function didMouseoverPropertyBox(propertyBox) {
+	// Hide delete button if last property box.
+	let isLastRow = propertyBox.closest('.panelBox').find('.propertyBox').length === 1;
+	propertyBox.find('.menuBox .button.delete').toggle(!isLastRow);
+
+	// Get menu boxes, starting with the one for the property box.
+	let menuBoxList = propertyBox.find('.menuBox.property');
+
+	// Is this a form data property box? If so, add the value menu box.
+	let panelBox = propertyBox.closest('.panelBox');
+	if (panelBox.attr('hotpot-panel-id') === 'body/form-data') {
+		let valueMenuBox = propertyBox.find('.valueBox .menuBox');
+		menuBoxList = menuBoxList.add(valueMenuBox);
+	}
+
+	// Compute left position for menu boxes, must show before computing width.
+	for (const menuBox of menuBoxList) {
+		$(menuBox).show();
+		$(menuBox).css('opacity', 1);
+		let left = -$(menuBox).outerWidth();
+		$(menuBox).css('left', left);
+	}
+}
+
+
+function didMouseleavePropertyBox(propertyBox) {
+	propertyBox.find('.menuBox').css('opacity', 0);
+}
+
+
+function didBlurUrlInput(urlInput) {
+	if (isFullRequest()) {
+		didSetQueryString(true);
+	}
+}
+
+
+function didBlurQueryStringInput(queryStringInput) {
+	didSetQueryString(false);
+}
+
+
+function didPickFullRequestNavOption(navOption) {
+	let formId = navOption.attr('hotpot-option');
+
+	// Select this nav option.
+	InputBox.find('.fullRequest.menuBox .option').removeClass('selected');
+	navOption.addClass('selected');
+
+	// Show relevant form.
+	showPanel(formId)
+}
+
+
+function didClickSubmitButton() {
+	run();
+}
+
+
+function didClickPropertyBoxDeleteButton(deleteButton) {
+	let panelBox = deleteButton.closest('.panelBox');
+
+	// Removal must come after searching for the closest @panelBox.
+	deleteButton.closest('.propertyBox').remove();
+
+	if (panelBox.attr('hotpot-panel-id').includes('queryString')) {
+		didSetQueryString(false);
+	}
+}
+
+
+function didClickPropertyBoxIsActiveCheckbox(checkboxElement) {
+	let isActiveBox = checkboxElement.closest('.isActiveBox');
+	let isChecked = checkboxElement.prop('checked');
+	let propertyBox = checkboxElement.closest('.propertyBox');
+	propertyBox.find('.keyBox').toggleClass('disabled', !isChecked);
+	propertyBox.find('.valueBox').toggleClass('disabled', !isChecked);
+}
+
+
+function didClickPropertyBoxAddButton(addButton) {
+	// Clone new property box.
+	let propertyBox = $('#templateBox .propertyBox.text').clone();
+
+	// Get containing panel box and its panel ID.
+	let panelBox = addButton.closest('.panelBox');
+	let panelId = panelBox.attr('hotpot-panel-id');
+
+	// Set property ID, use @panelId as root if it exists.
+	let id = null;
+	if (panelId) {
+		id = panelId + '/';
+		propertyBox.attr('hotpot-property-id', id);
+	}
+
+	//  Configure property box for full request.
+	setPropertyBoxForFullRequest(propertyBox, id);
+
+	// Add property box after current property box.
+	addButton.closest('.propertyBox').after(propertyBox);
+}
+
+
+function didClickPropertyBoxToggleTypeButton(button) {
+	let propertyBox = $(button).closest('.propertyBox');
+	let valueBox  = propertyBox.find('.valueBox');
+	let valueContent = propertyBox.find('.valueBox .content');
+
+	valueBox.find('.button.file').toggleClass('isActive');
+	let isFileType = valueBox.find('.button.file').hasClass('isActive');
+
+	let templateBox = $('#templateBox .propertyBox.text .value');
+	if (isFileType) {
+		templateBox = $('#templateBox .propertyBox.file .fileBox');
+	}
+
+	let clone = templateBox.clone();
+	valueContent.html(clone);
+}
+
+
+function didClickUploadButton(uploadButton) {
+	uploadButton.closest('.buttonBox').find('input[type="file"]').trigger('click');
+}
+
+
+function didChangeFunction(selectMenu) {
+	// Get new URL.
+	let url = selectMenu.val();
+
+	// Get function data.
+	let functionData = FunctionList.find( x => x.url === url );
+	if (!functionData) {
+		throw Error('No function data found for URL. URL: ' + url);
+	}
+
+	// Update HTTP method options.
+	setMethodList(functionData.methodList);
+
+	// Update stored URL value.
+	selectMenu.closest('.propertyBox').find('.value').val(url);
+
+	// Show panel related to function.
+	showPanel(url);
+}
+
+
+function getRootPanelBox() {
+	if (isFullRequest()) {
+		return InputBox;
+	} else {
+		let url = getPropertyBoxValue(InputBox.find('.propertyBox.urlBox'));
+		let panelBox = InputBox.find('.panelBox[hotpot-panel-id="' + url +'"]');
+		return panelBox;
+	}
+}
+
+
+function setMethodList(methodList) {
+	// Get select element and empty it.
+	let methodSelectElement = InputBox.find('.methodBox select');
+	methodSelectElement.empty();
+
+	// Add each method in @methodList to select element.
+	for (const methodOption of methodList) {
+		// Create option element.
+		let optionElement = $(document.createElement('option'));
+		optionElement.attr('value', methodOption);
+		optionElement.text(methodOption.toUpperCase());
+
+		// Add option element to page.
+		methodSelectElement.append(optionElement);
+	}
+}
+
+
+// TODO: Rename this to showFullRequestPanel?
+// TODO: Clean up this logic.
+function showPanel(panelId) {
+	// Hide all panels.
+	InputBox.find('.panelBox').hide();
+
+	// Get panel related to @panelId.
+	let panelBox = InputBox.find('.panelBox[hotpot-panel-id="' + panelId +'"]');
+
+	// If body content panel, show correct body type.
+	if (panelId === 'body') {
+		let bodyPanel = InputBox.find('.panelBox[hotpot-panel-id="body"]');
+		bodyPanel.show();
+
+		// Hide all body content panels by default.
+		bodyPanel.find('.bodyContent .panelBox').hide();
+
+		// Override @panelBox and set to body content panel.
+		let subPanelId = 'body/' + getBodyType();
+		panelBox = InputBox.find('.panelBox[hotpot-panel-id="' + subPanelId +'"]');
+	}
+
+	// Enable authorization panel?
+	else if (panelId === 'authorization') {
+		let authParentPanel = InputBox.find('.panelBox[hotpot-panel-id="authorization"]');
+		authParentPanel.show();
+		panelBox = getActiveAuthorizationPanel();
+	}
+
+	// Ensure @panelBox has 1+ property boxes, except JSON form bodies.
+	if (panelBox.attr('hotpot-panel-id') !== 'body/json') {
+		if (!panelBox.find('.propertyBox').length) {
+			let formBoxId = panelBox.attr('hotpot-panel-id');
+			let propertyBoxId = formBoxId + '/';
+			renderPanelPropertyFromIdValue(panelBox, propertyBoxId, null, true);
+		}
+	}
+
+	panelBox.show();
+}
+
+
+function getActiveAuthorizationPanel() {
+	let type = getAuthorizationType();
+
+	let panelId = 'authorization/' + type;
+	let panel = InputBox.find('.panelBox[hotpot-panel-id="' + panelId +'"]');
+
+	return panel;
+}
+
+
+// ================================================================================
+// Authorization Functions
+// ================================================================================
+function didChangeAuthorizationType(selectElement) {
+	// Get type.
+	let type = selectElement.val();
+
+	// Beta feature?
+	if (type === 'oAuth2' || type === 'custom') {
+		MessageClass.showMessage('Contact us to use this beta feature');
+		type = 'none';
+	}
+
+	// Hide all content options by default.
+	AuthorizationBox.find('.content.option .panelBox').hide();
+
+	// Show panel?
+	if (type !== 'none') {
+		let panelId = 'authorization/' + type;
+		$('[hotpot-panel-id="' + panelId +'"]').show();
+	}
+}
+
+
+function getAuthorizationData() {
+	// Set default result.
+	let data = {};
+
+	// Get auth type.
+	let type = getAuthorizationType();
+
+	if (type === 'bearer') {
+		data = getAuthorizationDataForBearer();
+
+	} else if (type === 'basic') {
+		data = getAuthorizationDataForBasic();
+	}
+
+	// Set type.
+	data['type'] = type;
+
+	// Return result.
+	return data;
+}
+
+
+function getAuthorizationType() {
+	let type = AuthorizationBox.find('.optionList').val();
+
+	if (!isFullRequest()) {
+		let rawData = getRawPropertyData();
+		type = getAuthorizationTypeFromPropertyIdList(Object.keys(rawData));
+	}
+
+	return type;
+}
+
+
+function getAuthorizationDataForBearer() {
+	let panelBox = isFullRequest() ? AuthorizationBox : $('.panelBox.templateRequest');
+
+	let token = getPropertyBoxValue(panelBox.find('[hotpot-property-id="authorization/bearer/token"]'));
+
+	return {
+		header: {
+			Authorization: "Bearer " + token
+		},
+		token: token
+	}
+}
+
+
+function getAuthorizationDataForBasic() {
+	let panelBox = isFullRequest() ? AuthorizationBox : $('.panelBox.templateRequest');
+
+	let username = getPropertyBoxValue(panelBox.find('[hotpot-property-id="authorization/basic/username"]'));
+	let password = getPropertyBoxValue(panelBox.find('[hotpot-property-id="authorization/basic/password"]'));
+
+	let base64Data = btoa(username + ':' + password);
+
+	return {
+		header: {
+			Authorization: "Basic " + base64Data
+		},
+		username: username,
+		password: password
+	}
+}
+
+
+// ================================================================================
+// OutputListBox Functions
+// ================================================================================
+function initOutputListBox() {
+	// Handle clicks on nav bar clicks for response box.
+	OutputListBox.on('click', '.menuBox.main .option', function() {
+		didClickResponseMainNavOption($(this));
+	})
+
+	OutputListBox.on('click', '.menuBox.body .option', function() {
+		didClickResponseBodyNavOption($(this));
+	})
+}
+
+
+function didClickResponseMainNavOption(navOption) {
+	// Get output box.
+	let outputBox = navOption.closest('.outputBox');
+
+	// Get option tpye.
+	let type = navOption.attr('hotpot-option');
+
+	showResponseMainNavOption(outputBox, type);
+	showResponseContent(outputBox, type);
+}
+
+
+function showResponseMainNavOption(outputBox, type) {
+	outputBox.find('.menuBox.main .option').removeClass('selected');
+	outputBox.find('.menuBox.main .option[hotpot-option="' + type + '"]').addClass('selected');
+}
+
+
+function showResponseContent(outputBox, type) {
+	outputBox.find('.contentBox .option.body, .contentBox .option.header').hide();
+	outputBox.find('.contentBox [hotpot-option="' + type + '"]').show();
+}
+
+
+function didClickResponseBodyNavOption(navOption) {
+	let outputBox = navOption.closest('.outputBox');
+	let type = navOption.attr('hotpot-option');
+
+	let menuBox = navOption.closest('.menuBox');
+	menuBox.find('.option').removeClass('selected');
+	navOption.addClass('selected');
+
+	outputBox.find('.contentBox .bodyContent .option').hide();
+	outputBox.find('.contentBox .bodyContent .option.' + type).show();
+
+	// Set height for MIME option?
+	if (type === 'mime') {
+		// let htmlIframe = outputBox.find('.contentBox .bodyContent .mime iframe');
+		// if (!htmlIframe.attr('hotpot-set-height')) {
+		// 	htmlIframe.css('height', htmlIframe[0].contentWindow.document.body.scrollHeight + 'px');
+		// 	htmlIframe.attr('hotpot-set-height', true);
+		// }
+	}
+}
+
+
+function didClickCodeButton() {
+	let parsedUrl = parseUrl(true);
+	let requestData = getRequestInputData(false);
+
+	// Extract query string parameters into JSON.
+	let queryStringJson = {};
+	parsedUrl.parameterList.forEach( x => queryStringJson[x[0]] = x[1] );
+
+	// Create object for playground.
+	let playgroundData = {
+		method: requestData.method,
+		url: parsedUrl.origin,
+		header: requestData.header,
+		bodyType: getBodyType(),
+		body: requestData.body,
+		queryStringJson: queryStringJson
+	};
+
+	showPlayground(playgroundData);
+}
+
+
+// ================================================================================
+// Share Functions
+// ================================================================================
+async function share() {
+	// Save and get function ID.
+	let id = await save(false);
+
+	// Copy share URL to clipboard.
+	let shareUrl = window.location.href;
+	ClipboardClass.copyText(shareUrl);
+	MessageClass.showMessage('Copied share URL to clipboard');
+}
+
+
+async function save(canShowConfirmation) {
+	// Get current ID.
+	let id = getURLParameter('id');
+
+	// No ID? Create one and update URL.
+	if (!id) {
+		id = createAlphanumericString(15);
+		setQueryString('id', id);
+	}
+
+	// Save to database.
+	await saveToDatabase(id);
+
+	if (canShowConfirmation) {
+		MessageClass.showMessage('Saved successfully');
+	}
+}
+
+
+// ================================================================================
+// Database Functions
+// ================================================================================
+async function saveToDatabase(saveId) {
+	// Get raw property data.
+	let rawData = getRawPropertyData();
+
+	// Convert @rawData to array of property objects.
+	let propertyList = [];
+	for (const propertyEntry of Object.entries(rawData)) {
+		let propertyId = propertyEntry[0];
+		let propertyData = propertyEntry[1];
+		let value = isDefined(propertyData.value) ? propertyData.value : null;
+
+		// TODO: this breaks in Node.js because @instanceof doesn't work properly. Fix this.
+		// Nullify Blob data? We do this to avoid storage/bandwidth costs.
+		if (value && value instanceof Blob) {
+			debug('Nullifying Blob data: ' + propertyId);
+			value = null;
+		}
+
+		propertyList.push({
+			id: propertyId,
+			value: value,
+			isActive: propertyData.isActive
+		});
+	}
+
+	let requestType = getRequestType();
+
+	// Save to database.
+	let dbData = {
+		id: saveId,
+		createdTime: new Date().getTime(),
+		requestType: requestType,
+		propertyList: propertyList,
+	}
+
+	// Update database.
+	return Db.db_
+				.collection('stubbi')
+				.doc(saveId)
+				.set(dbData);
+}
+
+
+function getRequestType() {
+	let type = 'unknown';
+
+	if (isFullRequest()) {
+		type = 'rest';
+	} else {
+		type = 'hotpot';
+	}
+
+	return type;
+}
+
+
+// ================================================================================
+// Init Functions
+// ================================================================================
+function initGlobals() {
+	RootMenuBox = $('#rootMenuBox');
+	ControlBox = $('#controlBox');
+	InputBox = $('#inputBox');
+	OutputListBox = $('#outputListBox');
+	AuthorizationBox = $('[hotpot-panel-id="authorization"]');
+	Playground = $('#playground');
+}
+
+
+// Decides which form to show first.
+function showFirstForm() {
+	if (isFullRequest()) {
+		InputBox.find('.fullRequest.menuBox .option').eq(0).click();
+
+	} else {
+		InputBox.find('.urlBox select').change();
+	}
+}
+
+
+function isFullRequest() {
+	return FunctionList[0].url === null;
+}
+
+
+function initFunctionList() {
+	let FullRequestFunctionList = [
+		{
+			methodList: ["get", "post", "put", "patch", "delete", "copy", "head", "options"],
+			url: null,
+			urlLabel: null,
+			urlNotes: null,
+			propertyList: []
+		}
+	];
+
+	let TwitterFunctionList = [
+		{
+			methodList: ["get"],
+			url: "https://api.twitter.com/1.1/users/show.json",
+			urlLabel: "Follow, search, and get users",
+			urlNotes: "Follow, search, and get users",
+			propertyList: [
+				{
+					id: "authorization/bearer/token",
+					label: "Bearer Token",
+					notes: "Bearer token",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "queryString/screen_name",
+					label: "Screen Name",
+					notes: "User screen name",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				}
+			]
+		},
+	];
+
+	let HotpotFunctionList = [
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/make-art",
+			urlLabel: "Art Maker",
+			urlNotes: "Art Maker",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/inputText",
+					label: "Input Text",
+					notes: "The description of the graphic to be created",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/outputDim",
+					label: "Output Dimension",
+					notes: "The dimensions of the output graphic",
+					inputType: "select",
+					valueOptionList: [256, 512, 736],
+					isRequired: true,
+				},
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/remove-background",
+			urlLabel: "Background Remover",
+			urlNotes: "Background Remover",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/image",
+					label: "Image",
+					notes: "Image from which to remove the background",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				}
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/supersize-image",
+			urlLabel: "Image Enlarger",
+			urlNotes: "Image Enlarger",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/image",
+					label: "Image",
+					notes: "Image to enlarge",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/sizeFactor",
+					label: "Size Factor",
+					notes: "The multiple by which to enlarge the image",
+					inputType: "select",
+					valueOptionList: [2, 4],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/imageStyle",
+					label: "Image Style",
+					notes: "The style of superresolution to apply",
+					inputType: "select",
+					valueOptionList: ["default", "anime"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/noiseCancellationFactor",
+					label: "Noise Cancellation Factor",
+					notes: "The level of noise cancellation to apply. 0 means no noise cancellation. 1 means low noise cancellation. 2 means medium noise cancellation.",
+					inputType: "select",
+					valueOptionList: [0, 1, 2],
+					isRequired: true,
+				},
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/colorize-picture",
+			urlLabel: "Picture Colorizer",
+			urlNotes: "Picture Colorizer",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/image",
+					label: "Image",
+					notes: "Image from which to remove the background",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/renderFactor",
+					label: "Render Factor",
+					notes: "The amount of colorization to apply",
+					inputType: "select",
+					valueOptionList: [5, 10, 12, 15, 20, 25, 30, 35],
+					isRequired: true,
+				}
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/restore-picture",
+			urlLabel: "Picture Restorer",
+			urlNotes: "Picture Restorer",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/image",
+					label: "Image",
+					notes: "Image from which to remove the background",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/withScratch",
+					label: "With Scratch",
+					notes: "Set to true if the image contains scratches",
+					inputType: "select",
+					valueOptionList: ["True", "False"],
+					isRequired: true,
+				}
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/remix-art",
+			urlLabel: "Art Personalizer",
+			urlNotes: "Art Personalizer",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/contentImage",
+					label: "Content Image",
+					notes: "The image to change",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/styleImage",
+					label: "Style Image",
+					notes: "The image whose style will be applied to the content (base) image",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/focusContent",
+					label: "Focus Content",
+					notes: "Set to true if you want the result to resemble the base image (contentImage). Setting it to false will result in a more cartoonish image.",
+					inputType: "select",
+					valueOptionList: ["true", "false"],
+					isRequired: true,
+				},
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/generate-color",
+			urlLabel: "Color Generator",
+			urlNotes: "Color Generator",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/json/data",
+					label: "Color JSON",
+					notes: "JSON input data",
+					inputType: "textarea",
+					valueTypeList: ["text/json"],
+					isRequired: true,
+				},
+			]
+		},
+
+		{
+			methodList: ["post"],
+			url: "https://api-bin.hotpot.ai/classify-image",
+			urlLabel: "Image Classifier",
+			urlNotes: "Image Classifier",
+			propertyList: [
+				{
+					id: "header/Authorization",
+					label: "API Key",
+					notes: "Hotpot API Key",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/image",
+					label: "Image",
+					notes: "The image to classify",
+					inputType: "file",
+					valueTypeList: ["image/png", "image/jpg", "image/webp"],
+					isRequired: true,
+				},
+
+				{
+					id: "body/form-data/labelList",
+					label: "Label List",
+					notes: "Accepted Values: Comma-delimited string of categories to consider during classification. Remove white space between commas.",
+					inputType: "text",
+					valueTypeList: ["text/plain"],
+					isRequired: true,
+				},
+			]
+		},
+	];
+
+	if (window.location.pathname.endsWith('hotpot')) {
+		FunctionList = HotpotFunctionList;
+	} else if (window.location.pathname.endsWith('twitter-1-1')) {
+		FunctionList = TwitterFunctionList;
+	} else {
+		FunctionList = FullRequestFunctionList;
+	}
+}
+
+
+function initControlBox() {
+	ControlBox.find('.beta, .leaf.add').on('click', function() {
+		MessageClass.showMessage('This API template makes integration as easy as a form. Contact us to use this.');
+	});
+}
+
+
+function initDatabase() {
+	Db = new HotpotFirebaseClass();
+}
+
+
+function initRootMenuBox() {
+	RootMenuBox.find('.button.submit').on('click', function() {
+		didClickSubmitButton();
+	});
+
+	RootMenuBox.find('.button.share').on('click', function() {
+		didClickShareButton();
+	})
+
+	RootMenuBox.find('.button.save').on('click', function() {
+		didClickSaveButton();
+	});
+
+	RootMenuBox.find('.button.code').on('click', function() {
+		didClickCodeButton();
+	});
+
+	RootMenuBox.find('.button.templatize').on('click', function() {
+		didClickTemplatizeButton();
+	});
+
+	RootMenuBox.find('.button.stress').on('click', function() {
+		didClickStressTestButton();
+	});
+}
+
+
+function didClickShareButton() {
+	share();
+}
+
+
+function didClickSaveButton() {
+	save(true);
+}
+
+
+function didClickStressTestButton() {
+	MessageClass.showMessage('Run concurrent stress tests easily. Contact us for details.');
+}
+
+
+function didClickTemplatizeButton() {
+	MessageClass.showMessage('Onboard API users easily by turning REST requests into simple forms. Contact us for details.');
+}
+
+
+
+// ================================================================================
+// Playground Functions
+// TODO: Clean this junk up!!! Hackenstein!
+// ================================================================================
+function showPlayground(playgroundData) {
+	// Configure @Playground.
+	Playground[0].contentWindow.configure(playgroundData);
+
+	// Show menu.
+	showFloatingMenu(Playground, ControlBox);
+}
+
+
+function showFloatingMenu(floatingMenu, elem) {
+   // Set default anchor point.
+   let x = elem.offset().left + elem.outerWidth();
+   let y = elem.offset().top - 10;
+   let width = elem.outerWidth();
+   let height = 0;
+
+   // Set floating menu settins.
+   let settings = {
+   	anchorX: x,
+   	anchorY: y,
+   	anchorWidth: width,
+   	anchorHeight: height,
+   	background: 'rgba(0, 0, 0, 0.6)',
+   	centered: true,
+   	widthPercentage: 80,
+   }
+
+   // Position content.
+   floatingMenu[0].contentWindow.showOverlayBySettingsNEW(settings);
+}
+
+
+function hidePlayground() {
+ 	Playground[0].contentWindow.hideOverlay(0);
+}
+
+
+function initPage() {
+	initGlobals();
+
+	initDatabase();
+
+	initFunctionList();
+
+	initRootMenuBox();
+
+	initControlBox();
+
+	initInputBox();
+
+	initOutputListBox();
+
+	renderPage();
+
+	showFirstForm();
+
+	initKeyboardEvents();
+}
+
+
+$(document).ready(function() {
+	initPage();
+});
+
+
+</script>
+</div>
+</div>
+<div id="rootGallery">
+<div class="body">
+<div class="title"> Explore More </div>
+<div class="cellListBox">
+<a href="../art-makerc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/art_maker/teaser_400.jpg" loading="lazy" alt="AI art maker: turn text to art with AI. Generate images with AI using only text.">
+<div class="label">AI Art Maker</div>
+</a>
+<a href="../indexc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/restorer/teaser_400.jpg" loading="lazy" alt="Remove background, enlarge picture, AI art, and other AI image tools.">
+<div class="label">AI Image Tools</div>
+</a>
+<a href="../app-store-screenshot-generatorc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/footerGallery/mobile_400.jpg" loading="lazy" alt="App Store screenshots mixed with Google Play screenshots, featuring iOS and Android smartphones like the iPhone XS Max and Samsung S10.">
+<div class="label">Device Mockups & App Graphics</div>
+</a>
+<a href="../colorize-picturec942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/remaster/teaser_400.jpg" loading="lazy" alt="Colorize pictures in seconds with AI">
+<div class="label">Colorize Pictures With AI</div>
+</a>
+<a href="../enlarge-picturec942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/supersizer/teaser_400.jpg" loading="lazy" alt="Enlarge photos, game assets, and other raster images in seconds. Hotpot.ai can create images of higher resolution without losing quality and is optimized for e-commerce stores, app developers, and picture sites">
+<div class="label">Enlarge Graphics With AI</div>
+</a>
+<a href="../indexc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/footerGallery/marketing_400.jpg" loading="lazy" alt="Marketing graphics and posts for Instagram, Facebook, Twitter, LinkedIn, and other social platforms. Used by influencers and Shopify sellers, Etsy sellers, Amazon sellers, eBay sellers, and other ecommerce store owners">
+<div class="label">Startups & Influencers</div>
+</a>
+<a href="../ai-copywriterc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/copywriter/teaser_400.jpg" loading="lazy" alt="Create ads, product descriptions, emails, blog posts, and more automatically with AI">
+<div class="label">AI Copywriter</div>
+</a>
+<a href="../remove-backgroundc942.html?s=footer-gallery" class="cellBox" target="_blank">
+<img src="../images/site/ai/background_remover/teaser_400.jpg" loading="lazy" alt="Removing the background from images is easy with Hotpot. Use our AI to remove backgrounds in seconds">
+<div class="label">Remove Backgrounds With AI</div>
+</a>
+</div>
+</div>
+</div>
+<footer id="rootFooter">
+<div class="top"></div>
+<div class="body">
+<div class="section general">
+<div class="navGroup">
+<div class="title">AI Services</div>
+<div class="grid">
+<a href="../docs/api4448.html?s=footer" class="leaf" target="_blank">Hotpot API</a>
+<a href="../art-maker4448.html?s=footer" class="leaf" target="_blank">AI Art Maker</a>
+<a href="../ai-copywriter4448.html?s=footer" class="leaf" target="_blank">AI Copywriter</a>
+<a href="../personalize-art4448.html?s=footer" class="leaf" target="_blank">AI Art Personalizer</a>
+<a href="../restore-picture4448.html?s=footer" class="leaf" target="_blank">AI Picture Restorer</a>
+<a href="../colorize-picture4448.html?s=footer" class="leaf" target="_blank">AI Picture Colorizer</a>
+<a href="../file-translator4448.html?s=footer" class="leaf" target="_blank">AI File Translator</a>
+<a href="../enlarge-picture4448.html?s=footer" class="leaf" target="_blank">AI Graphic Enlarger</a>
+<a href="../remove-background4448.html?s=footer" class="leaf" target="_blank">AI Background Remover</a>
+<a href="../color-generator4448.html?s=footer" class="leaf" target="_blank">AI Color Generator</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">Resources</div>
+<div class="grid">
+<a href="../pricing4448.html?s=footer">Pricing</a>
+<a href="../tools4448.html?s=footer">Design Tools</a>
+<a href="../app-store-screenshot-generator.html" target="_blank">App Store Screenshot Generator</a>
+<a href="../icon-resizer4448.html?s=footer">Icon Resizer</a>
+<a href="../free-icons4448.html?s=footer">Free Icons</a>
+<a href="../svg-to-png-converter4448.html?s=footer">SVG To PNG Converter</a>
+<a href="../free-game-assets4448.html?s=footer" target="_blank" class="desktop">Free Game Assets</a>
+<a href="https://www.panabee.com/business-name-generator?s=hotpot">Business Name Generator</a>
+<a href="https://www.panabee.com/domain-name-search?s=hotpot">Domain Name Search</a>
+<a href="https://www.panabee.com/app-name-generator?s=hotpot">App Name Generator</a>
+<a href="api-testing-tool4448.html?s=footer" class="leaf" target="_blank">API Testing Tool</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">Blog</div>
+<div class="grid">
+<a href="../blog/ios-1x-2x-3x-generator.html" target="_blank">iOS 1x 2x 3x Image Generator</a>
+<a href="../blog/sf-symbols-online.html" target="_blank">SF Symbols Online</a>
+<a href="../blog/app-icon-generator.html" target="_blank">App Icon Generator</a>
+<a href="../blog/how-to-make-app-store-screenshots.html" target="_blank">Make App Store Screenshots</a>
+<a href="../blog/how-to-make-app-store-panorama-screenshots.html" target="_blank">Make Panorama Screenshots</a>
+<a href="../blog/how-to-make-google-play-screenshots.html" target="_blank">Make Google Play Screenshots</a>
+<a href="../blog/how-to-make-feature-graphics.html" target="_blank">Make Feature Graphics</a>
+<a href="../blog/app-store-screenshot-sizes.html" target="_blank">App Store Screenshot Sizes</a>
+<a href="../blog/unity-screenshots-and-key-images.html" target="_blank">Unity Assets & Key Images</a>
+<a href="../blog/translate-json.html">Translate JSON files</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">Startup Thoughts</div>
+<div class="grid">
+<a href='https://twitter.com/panabee/status/1280678970007011328' target='_blank'>Luck Vs. Skill</a>
+<a href='https://twitter.com/panabee/status/1454968171501264901' target='_blank'>Give Up Vs. Keep Going</a>
+<a href='https://twitter.com/panabee/status/1283034413865918464' target='_blank'>The Entrepreneur Test</a>
+<a href='https://twitter.com/panabee/status/1453127028622782467' target='_blank'>Successful Second Movers</a>
+<a href="https://medium.com/@panabee/5-lessons-from-steve-jobs-2db72acd9cbc" target="_blank">Lessons From Steve Jobs</a>
+<a href='https://medium.com/p/6ca4917b764b' target='_blank'>Debunking The Steve Jobs Myth</a>
+<a href='https://twitter.com/panabee/status/1154266114622255104?s=20' target='_blank'>Basketball vs. Soccer</a>
+<a href='https://medium.com/p/45cc0304cbdc' target='_blank'>Big Ideas Start Small</a>
+<a href='https://twitter.com/panabee/status/1292379312843177984?s=20' target='_blank'>Feature, Product, or Company</a>
+<a href='https://medium.com/on-startups/dc7829b438ed' target='_blank'>Distribution > Product</a>
+<a href='https://medium.com/p/7ccc3320d6fd' target='_blank'>Coolness Follows Success</a>
+</div>
+</div>
+</div>
+<div class="section templates">
+<div class="navGroup">
+<div class="title">Popular Templates</div>
+<div class="grid mobileSplit">
+<a href="../templates/instagram-post.html" class="leaf">Instagram Post</a>
+<a href="../templates/instagram-story.html" class="leaf">Instagram Story</a>
+<a href="../templates/facebook-cover.html" class="leaf">Facebook Cover</a>
+<a href="../templates/facebook-post.html" class="leaf">Facebook Post</a>
+<a href="../templates/linkedin-banner.html" class="leaf">LinkedIn Banner</a>
+<a href="../templates/reddit-card.html" class="leaf">Reddit Card</a>
+<a href="../templates/background.html" class="leaf">Background</a>
+<a href="../templates/medium-rectangle.html" class="leaf">Medium Rectangle Ad</a>
+<a href="../templates/product-hunt-gallery.html" class="leaf">Product Hunt Gallery</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">&nbsp;</div>
+<div class="grid mobileSplit">
+<a href="../templates/iphone-xs-max-screenshot.html" class="leaf">iPhone XS Max Screenshot</a>
+<a href="../templates/iphone-12-pro-max-mockup.html" class="leaf">iPhone 12 Pro Max Mockup</a>
+<a href="../templates/iphone-xs-max-mockup.html" class="leaf">iPhone XS Max Mockup</a>
+<a href="../templates/iphone-8-plus-screenshot.html" class="leaf">iPhone 8 Plus</a>
+<a href="../templates/ipad-pro-screenshot.html" class="leaf">iPad Pro Screenshot</a>
+<a href="../templates/ipad-pro-mockup.html" class="leaf">iPad Pro Mockup</a>
+<a href="../templates/app-store-icon.html" class="leaf">App Store Icon</a>
+<a href="../templates/macbook-screenshot.html" class="leaf">Mac Store Screenshot</a>
+<a href="../templates/macbook-mockup.html" class="leaf">Macbook Mockup</a>
+<a href="../app-preview.html" class="leaf">App Preview Video</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">&nbsp;</div>
+<div class="grid mobileSplit">
+<a href="../templates/game-asset.html" class="leaf">Game Asset</a>
+<a href="../templates/splash-screen.html" class="leaf">Splash Screen</a>
+<a href="../templates/launch-screen.html" class="leaf">Launch Screen</a>
+<a href="../templates/google-play-icon.html" class="leaf">Google Play Icon</a>
+<a href="../templates/text-design.html" class="leaf">Text Design</a>
+<a href="../templates/twitter-header.html" class="leaf">Twitter Header</a>
+<a href="../templates/product-hunt-thumbnail.html" class="leaf">Product Hunt Thumbnail</a>
+<a href="../templates/button.html" class="leaf">Button</a>
+<a href="../templates/half-page.html" class="leaf">Half Page Ad</a>
+</div>
+</div>
+<div class="navGroup">
+<div class="title">&nbsp;</div>
+<div class="grid mobileSplit">
+<a href="../templates/youtube-thumbnail.html" class="leaf">YouTube Thumbnails</a>
+<a href="../templates/youtube-banner.html" class="leaf">YouTube Banners</a>
+<a href="../templates/chrome-screenshot.html" class="leaf">Chrome Screenshot</a>
+<a href="../templates/chrome-store-icon.html" class="leaf">Chrome Store Icon</a>
+<a href="../templates/google-pixel-5-mockup.html" class="leaf">Google Pixel 5 Mockup</a>
+<a href="../templates/google-pixel-4-xl-mockup.html" class="leaf">Google Pixel 4 XL Mockup</a>
+<a href="../templates/google-play-feature-graphic.html" class="leaf">Feature Graphic</a>
+<a href="../templates/samsung-s10-screenshot.html" class="leaf">Samsung S10 Screenshot</a>
+<a href="../templates/samsung-s9-mockup.html" class="leaf">Samsung S10 Mockup</a>
+<a href="../app-preview.html" class="leaf">Promo Video</a>
+</div>
+</div>
+</div>
+<div class="footerDivider"></div>
+<div class="copyright">
+<a href="../about.html">About</a>
+<a href="../jobs.html">Jobs</a>
+<a href="../credits.html">Credits</a>
+<a href="../contact.html">Contact</a>
+<div class="rights">© 2021 Panabee, LLC. All rights reserved.</div>
+</div>
+</div>
+</footer>
+
+<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '347006149548438');
+	fbq('track', 'PageView');
+	</script>
+<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=347006149548438&amp;ev=PageView&amp;noscript=1"
+	/></noscript>
+
+
+<script type="text/javascript">
+	    (function(c,l,a,r,i,t,y){
+	        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	    })(window, document, "clarity", "script", "56h5tdyxug");
+	</script>
+
+
+<script>
+		"use strict";
+
+		function loadDriftWidget() {
+		  var t = window.driftt = window.drift = window.driftt || [];
+
+		  if (!t.init) {
+		    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+		    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+		    t.factory = function(e) {
+		      return function() {
+		        var n = Array.prototype.slice.call(arguments);
+		        return n.unshift(e), t.push(n), t;
+		      };
+		    }, t.methods.forEach(function(e) {
+		      t[e] = t.factory(e);
+		    }), t.load = function(t) {
+		      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+		      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+		      var i = document.getElementsByTagName("script")[0];
+		      i.parentNode.insertBefore(o, i);
+		    };
+		  }
+
+			drift.SNIPPET_VERSION = '0.3.1';
+			drift.load('dbw4m3dzwg5e');
+		}
+
+
+		setTimeout(function() {
+			loadDriftWidget();
+		}, 2500);
+	</script>
+
+
+<div id="cookieOverlay" style="display:none">
+<div class="message">
+This website uses cookies. Continued usage means agreement. <a href="../privacy.html" target="_blank">See details</a>.
+</div>
+<div class="close">
+I AGREE
+</div>
+</div>
+
+
+<script>
+
+		function initCookieAlert() {
+			// Show cookie overlay?
+			if (!localStorage.getItem("seenCookieKey")) {
+				setTimeout(function() {
+					$("#cookieOverlay").fadeIn(300);
+				}, 1000);
+			}
+
+			// Dismiss cookie overlay on click.
+			$("#cookieOverlay .close").on("click", function() {
+				localStorage.setItem("seenCookieKey", true);
+				$("#cookieOverlay").fadeOut(300);
+			});
+		}
+
+
+		function initSidebar() {
+			// Set sidebar.
+			var sidebar = $("#rootSidebar");
+
+			// Handle taps on menu button.
+			$("#sidebarButton").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebar(true);
+			});
+
+			// Handle taps on close button.
+			sidebar.find(".closeBox").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebar(false);
+			});
+
+			// Handle clicks on sidebar headers.
+			sidebar.find(".header").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebarBranch($(this).closest(".branch"));
+			});
+
+			// Hide all branches nodes by default, except standalone ones.
+			sidebar.find(".branch").not(".standalone").each(function() {
+				toggleSidebarBranch($(this), false);
+			});
+		}
+
+
+		function toggleSidebarBranch(branch, value) {
+			// Set vars.
+			let className = "shown";
+			let isBool = typeof value === "boolean";
+
+			// Have Boolean? If yes, show/hide based on <value>.
+			if (isBool) {
+				branch.toggleClass(className, value);
+				branch.find(".leaf").toggle(value);
+
+			// Nope, no Boolean so toggle state.
+			} else {
+				branch.toggleClass(className);
+				branch.find(".leaf").toggle(branch.hasClass(className));
+			}
+		}
+
+
+		function toggleSidebar(show) {
+			// Set sidebar.
+			let sidebar = $("#rootSidebar");
+
+			// Show sidebar overlay?
+			let sidebarOverlay = sidebar.find(".overlay");
+			let fadeDur = 150;
+			if (show) {
+				sidebarOverlay.fadeIn(fadeDur);
+
+			// Nope, hide sidebar overlay.
+			} else {
+				sidebarOverlay.fadeOut(fadeDur);
+			}
+
+			// If showing sidebar, disable body scroll. Otherwise, enable body scroll.
+			let scrollValue = show ? "hidden" : "auto";
+			$("body").css("overflow", scrollValue);
+
+			// Show/hide sidebar by toggling class name.
+			let showClassName = "show";
+			sidebar.toggleClass(showClassName, show);
+		}
+
+
+		$(document).ready(function() {
+			initCookieAlert();
+
+			initSidebar();
+		});
+	</script>
+
+
+
+
+</body>
+
+<!-- Mirrored from hotpot.ai/stubbi/twitter-1-1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:59:14 GMT -->
+</html>

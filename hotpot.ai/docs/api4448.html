@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hotpot.ai/docs/api?s=footer by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta charset="utf-8">
+<title>Hotpot.ai API Documentation - Hotpot.ai</title>
+<meta name="description" content='Use Hotpot APIs to integrate background remover, picture restorer, image colorizer, image enlarger, art personalizer, and other AI services.'>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="preconnect" href="https://ajax.googleapis.com/">
+<link rel="preconnect" href="https://www.gstatic.com/">
+<link rel="preconnect" href="https://www.clarity.ms/">
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://js.driftt.com/">
+<link rel="dns-prefetch" href="https://connect.facebook.net/">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap" as="style">
+<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap">
+<link rel="stylesheet" media="screen" href="../assets/reset-05c44cf8428909649f0fc1436c3efe551a61163501a75f8f0103b768b3cd2596.css" />
+<link rel="stylesheet" media="screen" href="../assets/scaffold-05c455c4ca3288b5e63d2b66a9b12232733f0defb5538d4ffbebe579967f78dc.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../assets/application-e6cab4df9dedc2e5b587ea45180232d24268cbbb1e314f5cd16f7dc179661435.js"></script>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hotpot Design">
+<meta property="og:title" content="Hotpot.ai API Documentation">
+<meta property="og:description" content="Use Hotpot APIs to integrate background remover, picture restorer, image colorizer, image enlarger, art personalizer, and other AI services.">
+<meta property="og:image" content="https://hotpot.ai/images/site/ogDefaultImage.jpg">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="https://hotpot.ai/docs/api">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hotpot.ai/images/site/ogDefaultImage.jpg">
+<meta name="twitter:site" content="@HotpotMain">
+<meta name="twitter:title" content="Hotpot.ai API Documentation">
+<meta name="twitter:description" content="Use Hotpot APIs to integrate background remover, picture restorer, image colorizer, image enlarger, art personalizer, and other AI services.">
+
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" type="image/png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hotpot Design">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131810640-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131810640-1');
+  gtag('config', 'AW-770971492');
+</script>
+
+<link rel="canonical" href="api.html">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "legalName": "Panabee, LLC",
+  "name": "Hotpot.ai",
+  "url": "https://hotpot.ai",
+  "sameAs" : [
+    "https://twitter.com/HotpotMain",
+    "https://github.com/HotpotDesign",
+    "https://www.facebook.com/HotpotDesign"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Hotpot.ai",
+    "alternateName": "Hotpot",
+    "logo": "https://hotpot.ai/images/apple-touch-icon.png"
+  },
+  "contactPoint" : [
+    {
+      "@type" : "ContactPoint",
+      "contactType" : "customer service",
+      "email": "help@hotpot.ai",
+      "url": "https://hotpot.ai"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebAPI",
+    "name": "Hotpot API",
+    "description": "Integrate Hotpot.ai functionality into your app, website, or company workflow with the Hotpot API.",
+    "documentation": "https://hotpot.ai/docs/api",
+    "provider": {
+      "@type": "Organization",
+      "name": "Hotpot.ai"
+    }
+  }
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen" href="../assets/github.min-1fbece4dfa642ed99bc04cbe03a40c7559af8b7d8554a4b852a1496ce40be848.css" />
+<script src="../assets/highlight.min-2982d98d85f71225e36fefd90c467179cbffadaa25f857395beddc81c2ca261b.js"></script>
+</head>
+<style>
+
+  #rootSidebar .menuBox {
+    width: 240px;
+  }
+
+  #rootSidebar .divider.sidebar {
+    margin: 30px auto;
+  }
+
+</style>
+<body>
+<header id="rootHeader">
+<div class="headerBody">
+<a href="../index.html" class="logo">
+<img src="../images/logos/logoWhite.svg">
+<div class="name">Hotpot</div>
+</a>
+<div class="linkBox">
+<a href="../tools.html" class="desktop">AI Tools</a>
+<a href="../index.html" class="desktop">Graphics</a>
+<div id="sidebarButton"></div>
+</div>
+</div>
+</header>
+<main id="rootBody">
+<section id="rootSidebar">
+<div class="menuBox">
+<nav>
+<div class="branch standalone">
+<a href="api.html#rootHeader" class="leaf">Overview</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#demos" class="leaf">Demos</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#partners" class="leaf">Partners</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#authentication" class="leaf">Authentication</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#base-url" class="leaf">Base URL</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#credits" class="leaf">Credits</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#responseOverview" class="leaf">Responses</a>
+</div>
+<div class="divider sidebar"></div>
+<div class="branch standalone">
+<a href="api.html#art-maker" class="leaf">Art Maker</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#art-personalizer" class="leaf">Art Personalizer</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#background-remover" class="leaf">Background Remover</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#color-generator" class="leaf">Color Generator</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#graphic-enlarger" class="leaf">Graphic Enlarger</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#image-classifier" class="leaf">Image Classifier</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#picture-colorizer" class="leaf">Picture Colorizer</a>
+</div>
+<div class="branch standalone">
+<a href="api.html#picture-restorer" class="leaf">Picture Restorer</a>
+</div>
+</nav>
+</div>
+</section>
+<style>
+
+
+#pageBox {
+  width: 100%;
+  min-width: 0;
+  max-width: 1100px;
+  box-sizing: border-box;
+  padding: 0 50px;
+  margin: 50px auto 100px;
+}
+
+
+#rootSidebar .menuBox {
+	padding-top: 0;
+	border-bottom: 1px solid #E0E0E0;
+	overflow: visible;
+}
+
+
+#rootSidebar .menuBox nav {
+	position: sticky;
+	top: 0;
+	padding-top: 25px;
+}
+
+
+a {
+  color: #6DADE0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+h1 {
+  font-size: 1.7em;
+  padding-bottom: 1em;
+}
+
+
+h2 {
+  font-size: 1.4em;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
+
+
+ul {
+  list-style: inside;
+}
+
+
+article {
+	margin-bottom: 50px;
+}
+
+
+.divider {
+	width: 200px;
+	height: 1px;
+	margin: 50px 0 45px;
+	background: #E0E0E0;
+}
+
+
+.hljs {
+	padding: 0;
+	background: #FFF;
+}
+
+
+code {
+	background-color: #F2F2F2;
+	padding: 3px 5px;
+	border-radius: 3px;
+	font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+	font-size: 14px;
+	color: #EB5757;
+	word-break: break-word;
+}
+
+
+code.httpMethod {
+	font-size: 14px;
+	padding: 8px;
+	margin-right: 5px;
+	background: #302642;
+	color: #FFF;
+}
+
+
+code.endpoint {
+	font-size: 14px;
+	padding: 8px;
+}
+
+
+.summary {
+	margin-bottom: 20px;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// ServiceBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+.serviceBox {
+	margin-bottom: 55px;
+}
+
+
+.serviceBox .table {
+	margin-bottom: 50px;
+}
+
+
+.serviceBox .table .header {
+	background: #FCFCFC;
+	border: 1px solid #E0E0E0;
+	border-radius: 5px 5px 0 0;
+	padding: 15px;
+}
+
+
+.serviceBox .table .content {
+	display: block;
+	border: 1px solid #E0E0E0;
+	border-radius: 0 0 5px 5px;
+	border-top: 0;
+	padding: 20px;
+}
+
+
+.serviceBox .table.baseUrl .content {
+	border-top: 1px solid #E0E0E0;
+	border-radius: 5px;
+}
+
+
+.serviceBox .table.parameterList .content {
+	padding: 0px;
+}
+
+
+.serviceBox .row {
+	display: flex;
+}
+
+
+.serviceBox .column {
+	padding: 25px 20px 15px;
+}
+
+
+.serviceBox .column .subCell {
+	margin-bottom: 10px;
+}
+
+
+.serviceBox .column.first {
+	width: 300px;
+	background: #FCFCFC;
+}
+
+
+.serviceBox .table.parameterList .column.first {
+	color: #2a2f45;
+}
+
+
+.serviceBox .column.second {
+	flex: 1;
+}
+
+
+.serviceBox .isRequired {
+	font-size: 0.85em;
+	color: #7C7A7D;
+}
+
+</style>
+<script>hljs.initHighlightingOnLoad();</script>
+<section id="pageBox">
+<header id="headerBox">
+<h1 id="overview"> Hotpot API Documentation </h1>
+</header>
+<article>
+<p>
+Integrate Hotpot functionality into your app, website, or company workflow with the Hotpot API.
+</p>
+<p>
+Self-hosted options are available for companies requiring on-premise solutions for privacy or regulatory reasons.
+</p>
+<p>
+The API is based on <abbr title="Representational state transfer">REST</abbr>.
+</p>
+<p>
+Access to the Hotpot API is available <a href="../contact.html" target="_blank">upon request</a>.
+</p>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="demos">API Testing & Code Creation</h2>
+<p>
+To simplify integration with Hotpot and other APIs, use our free <a href='../stubbi001b.html?s=api-docs'>API testing tool</a>. This simpler version of Postman also creates code for other APIs besides Hotpot.
+</p>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="demos">Demos</h2>
+<p>
+The API endpoints below power the Hotpot.ai AI services and graphic platform. View the <a href='../toolsbec8.html?s=apiDocs' target='_blank'>Tools</a> page for product demos of the AI service.
+</p>
+<p>
+View code examples on our <a href="https://github.com/HotpotDesign/api-examples" target="_blank" rel="noopener">Github repo</a>.
+</p>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="partners">Partners</h2>
+<p>
+The Hotpot API is designed for enterprise-level scalability and reliability, suitable for bursty workloads or sustained high-volume traffic.
+</p>
+<p>
+To ensure we adopt best practices and state-of-the-art technologies, Hotpot is proud to partner with leaders in cloud infrastructure and machine learning.
+</p>
+<p>
+<a href="../about.html#partners">See partners</a>.
+</p>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="authentication">Authentication</h2>
+<p>All API requests require authentication. To authenticate to the API, pass the <code>Authorization</code> HTTP header with the valid API key on each request. You can view and manage API credentials from your account.</p>
+<div class="table baseUrl">
+<div class="content">
+<code class="endpoint">
+Authorization: yMHw4UidZM1Hha82AZtMjI50bYCfC3sdX7vvB
+</code>
+</div>
+</div>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="base-url">Base URL</h2>
+<div class="table baseUrl">
+<div class="content">
+<code class="endpoint">
+https://api-bin.hotpot.ai/
+</code>
+</div>
+</div>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="credits">Credits</h2>
+<p>You can view the number of API credits left for any given service in the <code>X-API-Credits-Left</code> HTTP response header.</p>
+</article>
+<div class="divider"></div>
+<article class="serviceBox">
+<h2 id="responseOverview">Responses</h2>
+<p class="summary">The Hotpot API uses standard HTTP status codes to communicate the result of API operations.</p>
+<div class="table parameterList">
+<header class="header"> Status Codes </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>200</code> </div>
+</div>
+<div class="column second">
+<div class="subCell notes">Success. Enjoy this amazing <a href="../hotpotcha.html" target="_blank">TikTok video</a>. You deserve it.</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>400</code> </div>
+</div>
+<div class="column second">
+<div class="subCell notes">Bad request. Invalid parameter values were provided.</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>401</code> </div>
+ </div>
+<div class="column second">
+<div class="subCell notes">Unauthorized. Make sure to include your API key in the <code>Authorization</code> HTTP header. </div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>403</code> </div>
+</div>
+<div class="column second">
+<div class="subCell notes">Forbidden. The API key you included in the <code>Authorization</code> header is not valid.</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>404</code> </div>
+</div>
+<div class="column second">
+<div class="subCell notes">Missing endpoint. Make sure you use the correct URL path.</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>429</code> </div>
+</div>
+<div class="column second">
+<div class="subCell notes">Rate limit or service quota exceeded. Make sure you have enough credits left in your account. Please employ exponential backoff before retrying.</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell"> <code>500</code></div>
+</div>
+<div class="column second">
+<div class="subCell notes">Internal server errors. Please try again later or <a href="../contact.html" target="_blank">contact us</a> if problems persist.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="art-maker"> Art Maker </h2>
+<p class="summary"> Create art with our AI image generator. Describe an image then let our AI interpret your words and transform them into art. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/make-art</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+inputText
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: String. </div>
+<div class="subCell notes">
+The description of the graphic to be created. Please be specific and limit descriptions to 300 characters.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+outputDim
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>256</code>, <code>512</code>, <code>736</code>. </div>
+<div class="subCell notes">
+The dimensions of the output graphic. Only square images are supported, but rectangular support is coming soon.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;inputText=A pig in the style of Starry Night by Vincent Van Gogh&#39; \
+     -F &#39;outputDim=256&#39; \
+     -o &#39;/Users/porky/funky-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/make-art
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="art-personalizer"> Art Personalizer </h2>
+<p class="summary"> Create personalized art with AI. Our deep learning model uses Neural Style Transfer to offer arbitrary artistic style transfer, allowing you to extract the style from one image and apply it to another. Most image style transfer models are trained on fixed, pre-defined styles. Ours is designed for flexibility and can accommodate styles not encountered during the training phase. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/remix-art</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+contentImage
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image to change.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+styleImage
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image whose style will be applied to the content (base) image.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+focusContent
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>true</code> or <code>false</code>. </div>
+<div class="subCell notes">
+Set to <code>true</code> if you want the result to resemble the base image (<code>contentImage</code>). Setting it to <code>false</code> will result in a more cartoonish image.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6d0e02031908031924000c0a08502d">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="cdbeb9b4a1a884a0acaaa8f08d">[email&#160;protected]</a>/Users/porky/funky.jpg&#39; \
+     -F &#39;focusContent=true&#39; \
+     -o &#39;/Users/porky/funky-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/remix-art
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image (in a binary format) after transferring style to the content image.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="background-remover"> Background Remover </h2>
+<p class="summary"> Remove the background from images with AI. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/remove-background</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+image
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image from which to remove the background.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="ec85818d8b89d1ac">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -o &#39;/Users/porky/large-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/remove-background
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image (in a binary format) after removing the background from the input image.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="color-generator"> Color Generator </h2>
+<p class="summary"> Generate color palettes or matching colors based on the given colors. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/generate-color</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+colorList
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Array of 1-4 strings, each representing a color in hexadecimal format. </div>
+<div class="subCell notes">
+These colors are hints for the machine learning model, which will generate matching colors based on the hints. At least 1 hint must be provided.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -H &quot;Content-Type: application/json&quot;
+     --data &#39;{&quot;colorList&quot;: [&quot;#6DADE0&quot;]}&#39; \
+     https://api-bin.hotpot.ai/generate-color
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+colorList
+</div>
+</div>
+<div class="column second">
+<div class="subCell notes">
+Array of hexadecimal colors.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="graphic-enlarger"> Graphic Enlarger </h2>
+<p class="summary"> Enlarge pictures, game assets, textures, and other graphics in seconds. This AI upscaler can create images of higher resolution without losing quality and is optimized for e-commerce stores, app graphics, and photo prints. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/supersize-image</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+image
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image you want to enlarge.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+sizeFactor
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>2</code>, <code>4</code>. </div>
+<div class="subCell notes">
+The multiple by which to increase image resolution.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+imageStyle
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>default</code>, <code>anime</code>. </div>
+<div class="subCell notes">
+The style that best describes the image to modify. Our AI accounts for different styles when extrapolating from an input image to output images of higher resolution.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+noiseCancellationFactor
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>0</code>, <code>1</code>, <code>2</code>. </div>
+<div class="subCell notes">
+The level of noise cancellation applied.
+0 means no noise cancellation.
+1 means low noise cancellation.
+2 means medium noise cancellation.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="5d34303c3a38601d">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -F &#39;sizeFactor=2&#39; \
+     -F &#39;imageStyle=default&#39; \
+     -F &#39;noiseCancellationFactor=0&#39; \
+     -o &#39;/Users/porky/big-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/supersize-image
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image (in a binary format) after enlarging it.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="image-classifier"> Image Classifier </h2>
+<p class="summary"> Categorize and tag images with the latest AI technology. Normal image classifiers require pre-defined categories or extensive training for custom categories. Our classifier can tag images based on custom categories -- without training. Optimized for e-commerce and media companies. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/classify-image</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+image
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image to classify.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+labelList
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Comma-delimited string of categories to consider during classification. </div>
+<div class="subCell notes">
+Remove white space between commas
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6c05010d0b09512c">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -F &#39;labelList=shirt,jeans,blue,white,short-sleeve&#39; \
+     https://api-bin.hotpot.ai/classify-image
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+{ "shirt": 0.98, "jeans": 0.01, "blue": 0.95, "white": 0.02, "short-sleeve": 0.88 }
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="picture-colorizer"> Picture Colorizer </h2>
+<p class="summary"> Colorize black and white pictures with AI. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/colorize-picture</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+image
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The black and white image which you want to colorize.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+renderFactor
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>0 - 50</code>. </div>
+<div class="subCell notes">
+The colorization factor, as described on the <a href="https://github.com/jantic/DeOldify">DeOldify GitHub</a>.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="1b72767a7c7e265b">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -F &#39;renderFactor=20&#39; \
+     -o &#39;/Users/porky/large-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/colorize-picture
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image (in a binary format) after colorization.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="serviceBox">
+<h2 id="picture-restorer"> Picture Restorer </h2>
+<p class="summary"> Restore pictures with AI by removing scratches, sharpening colors, and enhancing faces. Repairs color and black &amp; white photos. </p>
+<div class="table endpoint">
+<header class="header"> Endpoint </header>
+<div class="content">
+<code class="httpMethod">POST</code>
+<code class="endpoint">/restore-picture</code>
+</div>
+</div>
+<div class="table parameterList">
+<header class="header"> Request Parameters </header>
+<div class="content">
+<div class="row">
+<div class="column first">
+<div class="subCell">
+image
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: Image file. </div>
+<div class="subCell notes">
+The image you want to restore.
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column first">
+<div class="subCell">
+withScratch
+</div>
+<div class="subCell isRequired">
+Required
+</div>
+</div>
+<div class="column second">
+<div class="subCell limitations"> Accepted Values: <code>true</code> or <code>false</code>. </div>
+<div class="subCell notes">
+Does the image have scratches?
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="table">
+<header class="header"> Request Example </header>
+<div class="content">
+<pre><code>curl -H &#39;Authorization: API_KEY_HERE&#39; \
+     -F &#39;<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="b8d1d5d9dfdd85f8">[email&#160;protected]</a>/Users/porky/pig.jpg&#39; \
+     -F &#39;withScratch=true&#39; \
+     -o &#39;/Users/porky/restored-pig.jpg&#39; \
+     https://api-bin.hotpot.ai/restore-picture
+</code></pre>
+</div>
+</div>
+<div class="table responseList parameterList">
+<header class="header"> Response Properties </header>
+<div class="content">
+<div class="row">
+<div class="column second">
+<div class="subCell notes">
+The resulting image (in a binary format) after restoration.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</main>
+
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '347006149548438');
+	fbq('track', 'PageView');
+	</script>
+<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=347006149548438&amp;ev=PageView&amp;noscript=1"
+	/></noscript>
+
+
+<script type="text/javascript">
+	    (function(c,l,a,r,i,t,y){
+	        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	    })(window, document, "clarity", "script", "56h5tdyxug");
+	</script>
+
+
+<script>
+		"use strict";
+
+		function loadDriftWidget() {
+		  var t = window.driftt = window.drift = window.driftt || [];
+
+		  if (!t.init) {
+		    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+		    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+		    t.factory = function(e) {
+		      return function() {
+		        var n = Array.prototype.slice.call(arguments);
+		        return n.unshift(e), t.push(n), t;
+		      };
+		    }, t.methods.forEach(function(e) {
+		      t[e] = t.factory(e);
+		    }), t.load = function(t) {
+		      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+		      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+		      var i = document.getElementsByTagName("script")[0];
+		      i.parentNode.insertBefore(o, i);
+		    };
+		  }
+
+			drift.SNIPPET_VERSION = '0.3.1';
+			drift.load('dbw4m3dzwg5e');
+		}
+
+
+		setTimeout(function() {
+			loadDriftWidget();
+		}, 2500);
+	</script>
+
+
+<div id="cookieOverlay" style="display:none">
+<div class="message">
+This website uses cookies. Continued usage means agreement. <a href="../privacy.html" target="_blank">See details</a>.
+</div>
+<div class="close">
+I AGREE
+</div>
+</div>
+
+
+<script>
+
+		function initCookieAlert() {
+			// Show cookie overlay?
+			if (!localStorage.getItem("seenCookieKey")) {
+				setTimeout(function() {
+					$("#cookieOverlay").fadeIn(300);
+				}, 1000);
+			}
+
+			// Dismiss cookie overlay on click.
+			$("#cookieOverlay .close").on("click", function() {
+				localStorage.setItem("seenCookieKey", true);
+				$("#cookieOverlay").fadeOut(300);
+			});
+		}
+
+
+		function initSidebar() {
+			// Set sidebar.
+			var sidebar = $("#rootSidebar");
+
+			// Handle taps on menu button.
+			$("#sidebarButton").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebar(true);
+			});
+
+			// Handle taps on close button.
+			sidebar.find(".closeBox").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebar(false);
+			});
+
+			// Handle clicks on sidebar headers.
+			sidebar.find(".header").on("touchstart mousedown", function(event) {
+				event.preventDefault();
+				toggleSidebarBranch($(this).closest(".branch"));
+			});
+
+			// Hide all branches nodes by default, except standalone ones.
+			sidebar.find(".branch").not(".standalone").each(function() {
+				toggleSidebarBranch($(this), false);
+			});
+		}
+
+
+		function toggleSidebarBranch(branch, value) {
+			// Set vars.
+			let className = "shown";
+			let isBool = typeof value === "boolean";
+
+			// Have Boolean? If yes, show/hide based on <value>.
+			if (isBool) {
+				branch.toggleClass(className, value);
+				branch.find(".leaf").toggle(value);
+
+			// Nope, no Boolean so toggle state.
+			} else {
+				branch.toggleClass(className);
+				branch.find(".leaf").toggle(branch.hasClass(className));
+			}
+		}
+
+
+		function toggleSidebar(show) {
+			// Set sidebar.
+			let sidebar = $("#rootSidebar");
+
+			// Show sidebar overlay?
+			let sidebarOverlay = sidebar.find(".overlay");
+			let fadeDur = 150;
+			if (show) {
+				sidebarOverlay.fadeIn(fadeDur);
+
+			// Nope, hide sidebar overlay.
+			} else {
+				sidebarOverlay.fadeOut(fadeDur);
+			}
+
+			// If showing sidebar, disable body scroll. Otherwise, enable body scroll.
+			let scrollValue = show ? "hidden" : "auto";
+			$("body").css("overflow", scrollValue);
+
+			// Show/hide sidebar by toggling class name.
+			let showClassName = "show";
+			sidebar.toggleClass(showClassName, show);
+		}
+
+
+		$(document).ready(function() {
+			initCookieAlert();
+
+			initSidebar();
+		});
+	</script>
+
+</body>
+
+<!-- Mirrored from hotpot.ai/docs/api?s=footer by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:48:08 GMT -->
+</html>

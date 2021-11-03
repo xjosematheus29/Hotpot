@@ -1,0 +1,37 @@
+class HotpotFirebaseClass{constructor(onLoginHandler,onLogoutHandler){this.rootUrl_='https://storage.googleapis.com/hotpot-1561102158505.appspot.com';let firebaseConfig={apiKey:'AIzaSyBseDAr4x-x7IFweKg_y5UbQlzkH9iFtn8',authDomain:'hotpot-1561102158505.firebaseapp.com',databaseURL:'https://hotpot-1561102158505.firebaseio.com',projectId:'hotpot-1561102158505',storageBucket:'hotpot-1561102158505.appspot.com',messagingSenderId:'500620588715',appId:'1:500620588715:web:47ab3c5598b4f83d6fe9ee',};this.curUser_=null;firebase.initializeApp(firebaseConfig);this.db_=firebase.firestore();this.FieldValue_=firebase.firestore.FieldValue;this.initAuthEventHandlers_(onLoginHandler,onLogoutHandler);}
+async initAuthEventHandlers_(onLoginHandler,onLogoutHandler){let dbReference=this;firebase.auth().onAuthStateChanged(async function(user){if(user){let emailAddress=user.email;if(!emailAddress){debugError('Error in initAuthEventHandlers_(): no email associated with user');}else{dbReference.curUser_=await dbReference.getUser(emailAddress);if(onLoginHandler){onLoginHandler(dbReference.curUser_);}}}else{if(onLogoutHandler){onLogoutHandler();}}});}
+scrubEmailAddress(emailAddress){return emailAddress.trim().toLowerCase();}
+async getUser(emailAddress){let user=null;if(!emailAddress){return this.curUser_;}else{let cleanEmailAddress=this.scrubEmailAddress(emailAddress);let query=this.db_.collection('user').where('emailAddress','==',cleanEmailAddress);try{const querySnapshot=await query.get();if(querySnapshot.docs.length&&querySnapshot.docs[0]){user=querySnapshot.docs[0].data();user.firebaseDocId=querySnapshot.docs[0].id;}}catch(e){debug('Error in getUser(): '+e);}}
+return user;}
+async refreshCurUser(){if(this.curUser_&&this.curUser_.emailAddress){this.curUser_=await this.getUser(this.curUser_.emailAddress);}}
+async useService(serviceId,numCredits){let numCreditsLeft=-1;await this.refreshCurUser();let user=await this.getUser();if(user){if(user.creditList&&user.creditList[serviceId]&&user.creditList[serviceId].numAllowed>=numCredits){let fieldKey=`creditList.${serviceId}.numAllowed`;await this.incrementUserField(fieldKey,-numCredits);numCreditsLeft=user.creditList[serviceId].numAllowed-numCredits;}else{debug(`Insufficient credits for ${serviceId}. Credits required: ${numCredits}`);}}
+return numCreditsLeft;}
+async getNumCredits(serviceId){let user=await this.getUser();try{return user.creditList[serviceId].numAllowed;}catch(e){debug('Error in HotpotFirebaseClass.getNumCredits: could not access user credits: '+e);return-1;}}
+async addPlan(emailAddress,serviceId,numCredits,daysToExpirationParam){try{let userDocId=null;let user=await this.getUser(emailAddress);if(user){userDocId=user.firebaseDocId;}else{let newUserData=await this.createUser(emailAddress);userDocId=newUserData.id;}
+let creditKey=`creditList.${serviceId}.numAllowed`;let daysToExpiration=daysToExpirationParam;if(!daysToExpiration){daysToExpiration=3;if(serviceId===0){if(numCredits===1000){daysToExpiration=30;}else if(numCredits>1000){daysToExpiration=365;}}else{daysToExpiration=365;}}
+let oneDayTime=24*60*60*1000;let expirationDate=Date.now()+oneDayTime*daysToExpiration;let planKey=`planList.${serviceId}`;let planData={type:0,numAllowed:numCredits,expirationDate:expirationDate};this.db_.collection('user').doc(userDocId).update({[creditKey]:firebase.firestore.FieldValue.increment(numCredits),[planKey]:planData});this.refreshCurUser();}catch(e){debug('Error in addPlan(): '+e);}}
+async incrementUserField(key,deltaValue){let user=await this.getUser();if(!user){return;}
+let userDocId=user.firebaseDocId;try{this.db_.collection('user').doc(userDocId).update({[key]:firebase.firestore.FieldValue.increment(deltaValue)});this.refreshCurUser();}catch(e){debugError('Error in incrementUserField(): '+e);MessageClass.showMessage(e);}}
+async updateUserField(key,value){let user=await this.getUser();if(!user){return;}
+let userDocId=user.firebaseDocId;try{this.db_.collection('user').doc(userDocId).update({[key]:value});this.refreshCurUser();}catch(e){debugError('Error in updateUserField(): '+e);MessageClass.showMessage(e);}}
+async updateDesignName(designId,name){let fieldKey='designList.'+designId;let value={name:name,lastEditTime:new Date().getTime()}
+await this.updateUserField(fieldKey,value);}
+async updateDesignLastEditTime(designId,lastEditTimeParam){let lastEditTime=lastEditTimeParam?lastEditTimeParam:new Date().getTime();let fieldKey=this.getDesignListFieldKey(designId,'lastEditTime');await this.updateUserField(fieldKey,lastEditTime);}
+getDesignListFieldKey(designId,fieldName){return 'designList.'+designId+'.'+fieldName;}
+async getDesignList(){let designList=null;let user=await this.getUser();if(user&&user.designList){designList=user.designList;}
+return designList;}
+async createUser(emailAddress,userDataParam){if(!emailAddress){debugError('Error in createUser(): no email address');return;}
+let userData=userDataParam?userDataParam:{};let cleanEmailAddress=this.scrubEmailAddress(emailAddress);userData.emailAddress=cleanEmailAddress;userData.creationTime=new Date().getTime();return this.db_.collection('user').add(userData);}
+async getAwsKey(){let key=null;let user=await this.getUser();if(user&&user.apiKeys&&user.apiKeys.production&&user.apiKeys.production.aws){key=user.apiKeys.production.aws;}
+return key;}
+async setAwsKey(newKey){if(!newKey){debug('Error setting AWS key: no key');return;}
+this.updateUserField('apiKeys.production.aws',newKey);}
+async deleteDesign(designId){if(!designId){return;}
+let user=await this.getUser();if(!user){return;}
+let key='designList.'+designId;await this.db_.collection('user').doc(user.firebaseDocId).update({[key]:firebase.firestore.FieldValue.delete()});this.refreshCurUser();let filepath=this.getDesignStoragePath(designId);let fileRef=firebase.storage().ref().child(filepath);fileRef.delete();}
+getDesignStoragePath(designId){let firebaseStorageRootPath='designs';return firebaseStorageRootPath+'/'+designId+'.txt';}
+async startLogin(emailAddress,landingPathParam){let landingPath=landingPathParam?landingPathParam:'/magic-login-landing';let landingUrl=window.location.origin+landingPath;document.cookie='loginEmailAddress='+emailAddress+'; Max-Age=86400; Path=/users; Secure';let actionCodeSettings={url:landingUrl,handleCodeInApp:true,};try{let result=await firebase.auth().sendSignInLinkToEmail(emailAddress,actionCodeSettings);}catch(error){let errorCode=error.code;let errorMessage=error.message;MessageClass.showMessage(errorMessage);}}
+async endLogin(){if(firebase.auth().isSignInWithEmailLink(window.location.href)){let cookieList=Object.fromEntries(document.cookie.split(';').map(x=>x.trim().split('=')));let emailAddress=cookieList['loginEmailAddress'];if(!emailAddress){emailAddress=window.prompt('Please enter your email for confirmation');}
+try{let result=await firebase.auth().signInWithEmailLink(emailAddress,window.location.href);let user=await this.getUser(emailAddress);if(!user){await this.createUser(emailAddress);}
+let serverUrl='/users/firebaseUserDidLogin';try{$.ajax({url:serverUrl,type:'GET',});document.cookie='loginEmailAddress=; Max-Age=0;';}catch(error){MessageClass.showMessage('Error notifying server on login');}}catch(error){MessageClass.showMessage('Sorry, we had a hiccup: '+error);}}else{MessageClass.showMessage('Sorry, this is an invalid login link');}}
+async logout(){try{let result=await firebase.auth().signOut();}catch(error){let message='Sorry, we had a hiccup: '+error;MessageClass.showMessage(message);}}};

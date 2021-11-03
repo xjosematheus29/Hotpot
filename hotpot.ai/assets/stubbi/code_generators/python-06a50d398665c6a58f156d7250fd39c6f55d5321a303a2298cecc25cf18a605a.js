@@ -1,0 +1,9 @@
+class PythonConverter{constructor(method,url,headers,bodyType,body,queryParams){this.method=method;this.url=url;this.headers=headers;this.bodyType=bodyType;this.body=body;this.queryParams=queryParams;}
+generateCode(){let code=`import requests \n\n`;let url=this.url;if(this.queryParams&&Object.keys(this.queryParams).length!==0){url+='?'
+url+=Object.keys(this.queryParams).map(key=>`${key}=${this.queryParams[key]}`).join('&');}
+if(this.headers&&Object.keys(this.headers).length!==0){code+='headers = {\n'
+Object.keys(this.headers).forEach((key)=>{code+=`  '${key}': '${this.headers[key]}', \n`});code+='} \n\n'}
+if(this.body){code+='body = {\n'
+Object.keys(this.body).forEach((key)=>{if(this.bodyType==='form-data'&&key.toLowerCase().includes('image')){code+=`  '${key}': open('${this.body[key]}', 'rb'),\n`}else if(this.bodyType==='form-data'){code+=`  '${key}': (None, '${this.body[key]}'),\n`}else{code+=`  '${key}': '${this.body[key]}',\n`}});code+='} \n\n'}
+if(this.method&&this.bodyType==='x-www-form-urlencoded'){if(this.headers&&Object.keys(this.headers).length!==0){code+=`requests.${this.method}('${url}', headers=headers, data=body)`}else{code+=`requests.${this.method}('${url}', data=body)`}}else if(this.method&&this.bodyType==='form-data'){if(this.headers&&Object.keys(this.headers).length!==0){code+=`requests.${this.method}('${url}', headers=headers, files=body)`}else{code+=`requests.${this.method}('${url}', files=body)`}}else if(this.method){if(this.headers&&Object.keys(this.headers).length!==0){code+=`requests.${this.method}('${url}', headers=headers)`}else{code+=`requests.${this.method}('${url}')`}}
+return code}};

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hotpot.ai/components/playground by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:59:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../assets/application-e6cab4df9dedc2e5b587ea45180232d24268cbbb1e314f5cd16f7dc179661435.js"></script>
+
+<link rel="stylesheet" media="screen" href="../assets/reset-05c44cf8428909649f0fc1436c3efe551a61163501a75f8f0103b768b3cd2596.css" />
+<link rel="stylesheet" media="screen" href="../assets/scaffold-05c455c4ca3288b5e63d2b66a9b12232733f0defb5538d4ffbebe579967f78dc.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Signika&amp;family=Source+Sans+Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+
+<script src="../assets/stubbi/code_generators/curl-2c0dc1f030e7e49f57ffcb2cf532149622309030a35cdae7dc592d25763f7ff5.js" defer="defer"></script>
+<script src="../assets/stubbi/code_generators/php-314cdcb4d1dd41cc04dbb64e35670efde43d940af82f101c9c88b750d2954b9e.js" defer="defer"></script>
+<script src="../assets/stubbi/code_generators/python-06a50d398665c6a58f156d7250fd39c6f55d5321a303a2298cecc25cf18a605a.js" defer="defer"></script>
+<script src="../assets/render_json-3f2c923b20471749b808b62ac40974d77f4701e66cfcc65434e5777c5aa4b099.js" defer="defer"></script>
+<script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous" integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<style>
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// Body
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+html, body {
+	background: rgba(0, 0, 0, 0);
+}
+
+
+body.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootOverlay
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootOverlay {
+	background: transparent;
+	height: 100vh;
+	z-index: 0;
+}
+
+
+#rootOverlay.dark {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// RootBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#rootBox {
+	position: fixed;
+	top: 60px;
+	left: 10px;
+	display: flex;
+	justify-content: center;
+   box-sizing: border-box;
+   max-height: 95vh;
+	padding: 30px;
+	background: #FCFCFC;
+	border-radius: 5px;
+	margin-right: 10px;
+	box-shadow: 0 0 10px rgba(8, 8, 8, 0.28);
+	overflow: auto;
+	z-index: 8;
+}
+
+
+#rootBox.centered {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// General
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+h2 {
+	padding: 0;
+   margin: 0 0 8px;
+	font-family: Roboto;
+   font-size: 15px;
+   font-weight: normal;
+}
+
+
+a {
+	color: #6DADE0;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+<div id="rootOverlay" class="overlay"></div>
+<div id="rootBox">
+<style>
+
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 60px;
+	background-size: 23px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+   border-radius: 5px;
+   color: #FFF;
+   font-size: 16px;
+   cursor: pointer;
+   transition: background-color 0.5s linear;
+}
+
+
+.overlay {
+	backdrop-filter: blur(5px);
+}
+
+
+select, input {
+	color: #7C7A7D;
+	font-size: 15px;
+	line-height: 15px;
+}
+
+
+select {
+	height: 35px;
+   border: 1px solid #E0E0E0;
+   border-radius: 5px;
+   padding: 0 10px;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+// PageBox
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+#pageBox {
+	flex: 1;
+	overflow: auto;
+	margin: 50px;
+}
+
+
+#pageBox .menuBox {
+	display: flex;
+}
+
+
+#pageBox select {
+	height: 35px;
+	padding: 3px 10px;
+}
+
+
+#pageBox .menuBox .button {
+	width: 35px;
+	height: 35px;
+	margin-left: 15px;
+	opacity: 0.6;
+	transition: opacity 0.3s linear
+}
+
+
+#pageBox .menuBox .button:hover {
+	opacity: 1;
+}
+
+
+#pageBox .menuBox .button.icon.copy {
+	background-image: url(../images/site/copyIcon.svg);
+}
+
+
+#pageBox .outputBox {
+	margin-top: 50px;
+	height: 80vh;
+}
+
+
+.ace_editor {
+	height: 100%;
+}
+
+
+</style>
+<div id="pageBox">
+<div class="menuBox">
+<select class="optionList languageList">
+<option value="curl">cURL</option>
+<option value="python">Python</option>
+<option value="javascriptNode">JavaScript - Node</option>
+<option value="php">PHP</option>
+<option value="ruby">Ruby</option>
+<option value="cSharp">C#</option>
+</select>
+<div class="button icon copy" title="Copy code (Cmd + ')"></div>
+</div>
+<div class="outputBox">
+<pre id="editor" class="pretty"></pre>
+<div class="raw" style="display:none"></div>
+</div>
+</div>
+<script>
+
+
+// ================================================================================
+// Global Vars
+// ================================================================================
+// View Variables
+let PageBox = null;
+let ControlBox = null;
+
+// Model Variables
+let CodeEditor = null;
+let RequestData = null;
+
+// LS Keys
+let LsDefaultLanguageKey = 'ai.hotpot.stubbi.defaultLanguage';
+
+
+function initPageBox() {
+	PageBox.find('.optionList.languageList').on('change', function() {
+		didChangeOutputLanguage($(this));
+	});
+
+	PageBox.find('.button.copy').on('click', function() {
+		didClickCopyButton($(this));
+	});
+}
+
+
+function didClickCopyButton(copyButton) {
+	// let contentElement = PageBox.find('.outputBox .raw');
+	// let code = contentElement.text();
+
+	let code = CodeEditor.session.getValue();
+
+	ClipboardClass.copyText(code);
+	MessageClass.showMessage('Copied code to clipboard');
+}
+
+
+function didChangeOutputLanguage(selectElement) {
+	// Change language mode in editor.
+	CodeEditor.session.setMode(getCodeEditorLanguageMode());
+
+	generateCode();
+
+	// Save language.
+	let curLanguage = PageBox.find('.optionList.languageList').val();
+	localStorage.setItem(LsDefaultLanguageKey, curLanguage)
+}
+
+
+function generateCode() {
+	let code = null;
+	let language = getCurrentLanguage();
+
+	let method = RequestData.method;
+	let url = RequestData.url;
+	let header = RequestData.header;
+	let bodyType = RequestData.bodyType;
+	let body = RequestData.body;
+	let queryStringJson = RequestData.queryStringJson;
+
+	if (language === 'curl') {
+		const cc = new CurlConverter(
+						method,
+						url,
+						header,
+						bodyType,
+						body,
+						queryStringJson);
+
+		code = cc.generateCode();
+	} else if (language === 'php') {
+		const cc = new PHPConverter(
+						method,
+						url,
+						header,
+						bodyType,
+						body,
+						queryStringJson);
+
+		code = cc.generateCode();
+	} else if (language === 'python') {
+		const cc = new PythonConverter(
+						method,
+						url,
+						header,
+						bodyType,
+						body,
+						queryStringJson);
+
+		code = cc.generateCode();
+	}
+
+	if (code) {
+		// PageBox.find('.outputBox .pretty').text(code);
+		//PageBox.find('.outputBox .raw').text(code);
+
+		CodeEditor.session.setValue(code);
+	} else {
+		MessageClass.showMessage('Please contact us to use this language');
+	}
+}
+
+
+function initKeyboardEvents() {
+   $(document).keydown(function(event) {
+      didKeyboardEvent(event);
+   });
+}
+
+
+function didKeyboardEvent(event) {
+   // Ctrl+' or Cmd+' pressed? Copy code.
+   if (didPressMetaKey1(event) && event.keyCode === 222) {
+   	event.preventDefault();
+   	didClickCopyButton();
+   }
+}
+
+
+// ================================================================================
+// External Functions
+// ================================================================================
+function configure(requestData) {
+	RequestData = requestData;
+
+	// Use different default language?
+	let languageList = PageBox.find('.optionList.languageList');
+	let savedLanguage = localStorage.getItem(LsDefaultLanguageKey);
+	if (savedLanguage) {
+		let isSupported =  languageList.find('option[value="' + savedLanguage + '"]').length;
+		if (isSupported) {
+	 		languageList.val(savedLanguage);
+		}
+ 	}
+
+   CodeEditor.session.setMode(getCodeEditorLanguageMode());
+
+	generateCode();
+}
+
+
+function getCurrentLanguage() {
+	return PageBox.find('.optionList.languageList').val();
+}
+
+
+// ================================================================================
+// Init Functions
+// ================================================================================
+function initGlobals() {
+	PageBox = $('#pageBox');
+	ControlBox = $('#controlBox');
+}
+
+
+function initCodeEditor() {
+   CodeEditor = ace.edit('editor');
+   CodeEditor.setTheme('ace/theme/monokai');
+}
+
+
+function getCodeEditorLanguageMode() {
+	let base = 'ace/mode/index.html';
+
+	let modeLanguage = getCurrentLanguage();
+
+	switch (modeLanguage) {
+		case 'javascriptNode':
+			modeLanuage = 'javascript';
+			break;
+
+		case 'cSharp':
+			modeLanguage = 'csharp';
+			break;
+	}
+
+	return base + modeLanguage;
+}
+
+
+function initPage() {
+	initGlobals();
+
+	initPageBox();
+
+	initCodeEditor();
+
+	initKeyboardEvents();
+}
+
+
+$(document).ready(function() {
+	initPage();
+});
+
+
+</script>
+</div>
+<script>
+
+
+// ================================================================================
+// OverlayClass
+// ================================================================================
+let OverlayClass = (function() {
+   "use strict";
+
+
+   // ================================================================================
+   // Constants
+   // ================================================================================
+   const DefaultShowDur = 200;
+   const DefaultHideDur = 200;
+   const DefaultXOffset = 10;
+   const DefaultYOffset = 10;
+
+   // ================================================================================
+   // Global Variables
+   // ================================================================================
+
+
+
+   // ================================================================================
+   // Functions
+   // ================================================================================
+	function init() {
+		$('#rootOverlay').on('click', function() {
+			hideOverlay(0);
+		});
+	}
+
+
+	function positionContent(anchorXParam, anchorYParam, anchorWidthParam, anchorHeightParam) {
+		// Set anchor points, ensure they are valid numbers.
+		let anchorX = anchorXParam ? anchorXParam : 0;
+		let anchorY = anchorYParam ? anchorYParam : 0;
+		let anchorWidth = anchorWidthParam ? anchorWidthParam : 0;
+		let anchorHeight = anchorHeightParam ? anchorHeightParam : 0;
+
+		// Default content position to be below anchor point.
+		let newX = anchorX + DefaultXOffset;
+		let newY = anchorY + anchorHeight + DefaultYOffset;
+
+		// Set default max-height value.
+		let maxHeight = 'none';
+
+		// Set content box.
+		let contentBox = $('#rootBox');
+
+      // Set window and content values.
+      let contentHeight = contentBox.outerHeight();
+      let windowWidth = $(window).width();
+      let windowHeight = $(window).height();
+
+		// If insufficient space below, can we place content above anchor point?
+		if (newY + contentHeight > windowHeight) {
+			// Update <newY>.
+ 			newY = anchorY - DefaultYOffset - contentHeight;
+
+ 			// Insufficient space above anchor point? Position content near window top.
+ 			if (newY < DefaultYOffset || (newY + contentHeight > windowHeight)) {
+ 				// Set <newY>.
+ 				newY = DefaultYOffset;
+
+ 				// Update <maxHeight>.
+ 				maxHeight = windowHeight - 2*DefaultYOffset;
+ 			}
+ 		}
+
+ 		// Set content properties.
+ 		contentBox.offset({left: newX, top: newY});
+ 		contentBox.css('max-height', maxHeight + 'px');
+	}
+
+
+	function showOverlayBySettings() {
+		showOverlay();
+
+	 	let maxWidth = $(window).width() - 2*DefaultXOffset;
+	 	let maxHeight = $(window).height() - 2*DefaultYOffset;
+
+		let contentBox = $('#rootBox');
+		contentBox.css('position', 'static');
+		contentBox.css('max-height', maxHeight + 'px');
+		contentBox.css('max-width', maxWidth + 'px');
+
+		//if (contentBox.outerWidth() > $(window).width() ||
+		//	contentBox.outerHeight() > $(window).height()) {
+			contentBox.css('overflow', 'auto');
+		//}
+
+		$('body').addClass('center');
+		$('#rootOverlay').addClass('dark');
+	}
+
+
+	function showOverlay() {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = DefaultShowDur;
+
+		// Show overlay.
+		iframeElement.fadeIn(dur);
+
+		// Given content focus.
+		$('#rootBox').focus();
+	}
+
+
+	function hideOverlay(durParam) {
+		// Get iframe element holding overlay.
+		let iframeElement = $(window.frameElement);
+
+		// Set duration.
+		let dur = isDefined(durParam) ? durParam : DefaultHideDur;
+
+		// Show overlay.
+		iframeElement.fadeOut(dur);
+	}
+
+
+	function configure(settings) {
+		if (settings.background) {
+			$('#rootOverlay').css('background', settings.background);
+		}
+	}
+
+
+   // ================================================================================
+   // API
+   // ================================================================================
+   return {
+      init: init,
+      configure: configure,
+      hideOverlay: hideOverlay,
+      showOverlay: showOverlay,
+      showOverlayBySettings: showOverlayBySettings,
+      positionContent: positionContent
+   };
+})();
+
+
+// ================================================================================
+// Component Layout Ready Event Handler
+// ================================================================================
+$(document).ready(function() {
+	OverlayClass.init();
+});
+
+
+function positionContent(anchorX, anchorY, anchorWidth, anchorHeight) {
+	OverlayClass.positionContent(anchorX, anchorY, anchorWidth, anchorHeight);
+}
+
+
+function hideOverlay(dur) {
+	OverlayClass.hideOverlay(dur);
+}
+
+
+function showOverlay() {
+	OverlayClass.showOverlay();
+}
+
+
+function showOverlayBySettings(settings) {
+	OverlayClass.showOverlayBySettings(settings);
+}
+
+
+function showOverlayBySettingsNEW(settings) {
+	// Show overlay.
+	OverlayClass.showOverlay();
+	OverlayClass.configure(settings);
+
+	// Set content box.
+	let contentBox = $('#rootBox');
+
+	contentBox.toggleClass('centered', settings.centered);
+
+
+
+	// TODO: Fix this hacky stuff. Please. It's so embarrassing.
+	// Reset width value.
+	contentBox.css('width', 'auto');
+
+
+
+	if (settings.centered) {
+		let overflowCSS = contentBox.prop('scrollHeight') > contentBox.height() ? 'auto' : 'visible';
+		contentBox.css('overflow', overflowCSS);
+
+		if (settings.widthPercentage) {
+			contentBox.css('width', settings.widthPercentage + '%');
+		}
+
+	} else {
+		OverlayClass.positionContent(settings.anchorX, settings.anchorY, settings.anchorWidth, settings.anchorHeight);
+	}
+}
+
+
+</script>
+</body>
+
+<!-- Mirrored from hotpot.ai/components/playground by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Nov 2021 21:59:14 GMT -->
+</html>
